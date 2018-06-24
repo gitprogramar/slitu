@@ -1,0 +1,8 @@
+RRHH Change Log
+
++Capcitaciones
+	\components\com_users\views\profile\tmpl\edit.php
+	
+SELECT  fieldvalue.item_id, users.name, fieldvalue.value FROM `prog_users` users 
+INNER JOIN `prog_fields_values` fieldvalue ON users.id = fieldvalue.item_id
+where fieldvalue.value like '%comunica%'
