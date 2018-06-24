@@ -1,0 +1,66 @@
+var contactSelect;
+
+// find react components
+function findReactComponent(dom) {
+    for (var key in dom)
+        if (key.startsWith("__reactInternalInstance$")) {
+            var compInternals = dom[key]._currentElement;
+            var compWrapper = compInternals._owner;
+            var comp = compWrapper._instance;
+            return comp;
+        }
+    return null;
+};
+
+// start method
+function startProcess() {
+	//open new chat side panel
+	var newChatWindow = findReactComponent(document.querySelectorAll('[title="New chat"]')[0]);
+	newChatWindow.props.onClick(new Event('click'));	
+	window.setTimeout(setObjects, 3000);
+}
+
+// save contact side panel for contact selection
+function setObjects() {	
+	contactSelect = findReactComponent(document.getElementsByClassName("contact")[0].parentNode.parentNode.parentNode);	
+	window.setTimeout(openChat, 3000);
+}
+
+// open a new chat
+function openChat() {
+	// iterate throgth contacts
+	//for(var x=0;x<Store.Contact.models.length;x++) {
+		//if(Store.Contact.models[x].__x_name == "Pili") {
+				//console.log(Store.Contact.models[x].__x_id);
+				contactSelect.props.children.props.onClick(new Event('click'),{id: Store.Contact.models[0].__x_id });
+				window.setTimeout(function() {sendMessage(0) }, 5000);
+		//}
+	//}	
+}
+
+// write message and send
+function sendMessage(index) {
+	if(Store.Contact.models[index].__x_name == "Pili") {
+			console.log("Sent message to: " + Store.Contact.models[index].__x_name);
+			var inputChat = findReactComponent(document.getElementsByClassName('block-compose')[0]); 
+			inputChat.props.chat.sendMessage('Estoy probando whatsapp. Ignorá este mensaje.');	
+		}
+
+	index++;
+	if(index < Store.Contact.models.length) {	
+		contactSelect.props.children.props.onClick(new Event('click'),{id: Store.Contact.models[index].__x_id });
+		window.setTimeout(function() {sendMessage(index) }, 5000);
+	}
+}
+
+
+// current contact info
+//var contactId = Store.Contact.models[50].__x_id;
+// name __x_name
+
+// iterate throgth contacts
+for(var x=0;x<Store.Contact.models.length;x++) {
+	if(Store.Contact.models[x].__x_name == "Pili") {
+		console.log(Store.Contact.models[x].__x_id);
+	}
+}
