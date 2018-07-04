@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension method="upgrade" type="component" version="2.5">
+	<name>RokQuickCart</name>
+    <creationDate>March 17, 2016</creationDate>
+    <author>RocketTheme, LLC</author>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2016 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.1.5</version>
+    <description>Parent for all PHP based projects</description>
+
+    <scriptfile>rokquickcart_install.script.php</scriptfile>
+
+    <!-- Site part -->
+    <files folder="site">
+		<folder>assets</folder>
+        <folder>helpers</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <filename>rokquickcart.php</filename>
+        <folder>css</folder>
+        <filename>router.php</filename>
+        <filename>metadata.xml</filename>
+        <folder>models</folder>
+    </files>
+
+    <media destination="../images/rokquickcart" folder="images">
+		<folder>samples</folder>
+	</media>
+
+    <install>
+   		<sql>
+   			<file charset="utf8" driver="mysql">install/install.mysql.utf8.sql</file>
+   		</sql>
+   	</install>
+   	<uninstall>
+   		<sql>
+   			<file charset="utf8" driver="mysql">install/uninstall.mysql.utf8.sql</file>
+   		</sql>
+   	</uninstall>
+
+    <!-- Administration part -->
+    <administration>
+        <!-- Administration Menu Section -->
+        <menu img="components/com_rokquickcart/assets/images/icon-16-rokquickcart.png">COM_ROKQUICKCART</menu>
+
+        <!-- Administration Main File Copy Section -->
+        <!-- Note the folder attribute: This attribute describes the folder
+              to copy FROM in the package to install therefore files copied
+              in this section are copied from /admin/ in the package -->
+        <files folder="admin">
+			<folder>tables</folder>
+            <folder>install</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>views</folder>
+            <filename>controller.php</filename>
+            <folder>fields</folder>
+            <folder>language</folder>
+            <folder>libs</folder>
+            <folder>controllers</folder>
+            <filename>index.html</filename>
+            <filename>rokquickcart.php</filename>
+            <filename>config.xml</filename>
+            <folder>models</folder>
+        </files>
+    </administration>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+</extension>

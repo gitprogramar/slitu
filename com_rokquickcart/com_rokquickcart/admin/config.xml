@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="basic" addrulepath="/administrator/components/com_rokquickcart/models/rules" addfieldpath="/administrator/components/com_rokquickcart/fields">
+        
+		<field type="break" label="Opciones generales"/>
+        <field name="page_title" type="text" default="Our Products" label="ROKQUICKCART_LABEL_CART_PAGE_TITLE"
+               description="ROKQUICKCART_DESC_CART_PAGE_TITLE" size="30" />
+        <field name="page_columns" type="integer" default="2" label="ROKQUICKCART_LABEL_PAGE_COLUMNS"
+               description="ROKQUICKCART_DESC_PAGE_COLUMNS" first="1" last="4" step="1" required="true"/>
+        <field name="shelf_image_width" type="text" default="100" label="ROKQUICKCART_LABEL_SHELF_IMAGE_WIDTH"
+               description="ROKQUICKCART_DESC_SHELF_IMAGE_WIDTH" size="3" validate="number" required="true"/>
+        <field name="use_rokbox" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_USE_ROKBOX"
+               description="ROKQUICKCART_DESC_USE_ROKBOX">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="include_css" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_DEFAULT_CSS"
+               description="ROKQUICKCART_DESC_DEFAULT_CSS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="sameheight_items" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_DEFAULT_SAMEHEIGHT"
+               description="ROKQUICKCART_DESC_DEFAULT_SAMEHEIGHT">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>		
+        <field name="display_item_symbol" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_DEFAULT_DISPLAYITEMSYMBOL"
+               description="ROKQUICKCART_DESC_DEFAULT_DISPLAYITEMSYMBOL">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		<field name="checkout_mode" type="radio" class="btn-group" default="production" label="ROKQUICKCART_LABEL_CHECKOUT_MODE"
+               description="ROKQUICKCART_DESC_CHECKOUT_MODE">
+            <option value="sandbox">Prueba</option>
+			<option value="production">Real</option>            
+        </field>
+		<!--
+        <field type="break" label="Tax Options" />
+        <field name="tax" type="radio" class="btn-group" default="0" label="ROKQUICKCART_LABEL_USE_TAX_RATE"
+               description="ROKQUICKCART_DESC_USE_TAX_RATE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		
+        <field name="tax_rate" type="text" default="0.00" validate="number" label="ROKQUICKCART_LABEL_TAX_RATE"
+               description="ROKQUICKCART_DESC_TAX_RATE" size="10"/>
+        <field name="tax_shipping" type="radio" class="btn-group" default="0" label="ROKQUICKCART_LABEL_USE_TAX_SHIPPING"
+               description="ROKQUICKCART_DESC_USE_TAX_SHIPPING">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		-->
+		
+		<field type="break" label="Formas de Pago"/>	
+		<field name="checkout_local" type="radio" class="btn-group" default="1" label="En el Local"
+               description="Habiliar la forma de pago">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		<field name="checkout_transfer" type="radio" class="btn-group" default="1" label="Transferencia Bancaria"
+               description="Habiliar la forma de pago">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		<field name="checkout_mercadopago" type="radio" class="btn-group" default="1" label="MercadoPago"
+               description="Habiliar la forma de pago">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		<field name="checkout_paypal" type="radio" class="btn-group" default="1" label="PayPal"
+               description="Habiliar la forma de pago">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		
+        <field type="break" label="MercadoPago"/>		
+		<field name="client_id" type="text" default="" label="Client Id"
+               description="Ingresa la Client_id de MercadoPago. (https://www.mercadopago.com/mla/herramientas/aplicaciones)" size="100"/>
+        <field name="client_secret" type="text" default="" label="Client Secret"
+               description="Ingresa la Client_secret de MercadoPago. (https://www.mercadopago.com/mla/herramientas/aplicaciones)" size="100"/>
+        <field name="shipping" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_ADD_SHIPPING"
+               description="ROKQUICKCART_DESC_ADD_SHIPPING">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+		<field type="break" label="PayPal"/>
+		<field name="checkout_method" type="radio" class="btn-group" default="PayPal" label="ROKQUICKCART_LABEL_CHECKOUT_METHOD"
+               description="ROKQUICKCART_DESC_CHECKOUT_METHOD">
+            <option value="PayPal">PayPal</option>
+            <!--<option value="GoogleCheckout">Google Checkout</option>
+            <option value="AmazonPayments">Amazon Payments</option>
+            <option value="SendForm">Custom SendForm URL</option>-->
+        </field>		
+		<field name="paypal_email" type="text" default="" label="ROKQUICKCART_PAYPAL_EMAIL"
+               description="ROKQUICKCART_PAYPAL_EMAIL_DESC" size="30"/>
+        <field name="paypal_currency" type="list" default="USD" label="ROKQUICKCART_CURRENCY"
+               description="ROKQUICKCART_CURRENCY_DESC">
+            <option value="AUD">Australian Dollar</option>
+            <option value="BRL">Brazilian Real</option>
+            <option value="CAD">Canadian Dollar</option>
+            <option value="CZK">Czech Koruna</option>
+            <option value="DKK">Danish Krone</option>
+            <option value="EUR">Euro</option>
+            <option value="HKD">Hong Kong Dollar</option>
+            <option value="HUF">Hungarian Forint</option>
+            <option value="ILS">Israeli New Sheqel</option>
+            <option value="JPY">Japanese Yen</option>
+            <option value="MYR">Malaysian Ringgits</option>
+            <option value="MXN">Mexican Peso</option>
+            <option value="NOK">Norwegian Krone</option>
+            <option value="NZD">New Zealand Dollar</option>
+            <option value="PHP">Philippine Pesos</option>
+            <option value="GBP">Pound Sterling</option>
+            <option value="PLN">Polish Zloty</option>
+            <option value="RUB">Russian Ruble</option>
+            <option value="SGD">Singapore Dollar</option>
+            <option value="SEK">Swedish Krona</option>
+            <option value="CHF">Swiss Franc</option>
+            <option value="TWD">Taiwan New Dollar</option>
+            <option value="THB">Thai Baht</option>
+            <option value="TRY">Turkish Lira</option>
+            <option value="USD">U.S. Dollar</option>
+        </field>
+		        
+		
+        <field name="shipping_type" type="list" default="items" label="ROKQUICKCART_LABEL_SHIPPING_COST_CALC"
+               description="ROKQUICKCART_DESC_SHIPPING_COST_CALC">
+            <option value="flat">ROKQUICKCART_OPTION_FLAT_RATE</option>
+            <option value="quantity">ROKQUICKCART_OPTION_QUANTITY_RATE</option>
+            <option value="percent">ROKQUICKCART_OPTION_PERCENT</option>
+            <option value="items">ROKQUICKCART_OPTION_PER_ITEM</option>
+        </field>
+        <field name="shipping_flat" type="text" default="0.00" label="ROKQUICKCART_LABEL_FLAT_RATE_AMOUNT"
+               description="ROKQUICKCART_DESC_FLAT_RATE_AMOUNT" size="10" validate="number"/>
+        <field name="shipping_quantity" type="text" default="0.00" label="ROKQUICKCART_LABEL_QUANTITY_RATE_AMOUNT"
+               description="ROKQUICKCART_DESC_QUANTITY_RATE_AMOUNT" size="10" validate="number"/>
+        <field name="shipping_percent" type="text" default="0.00" label="ROKQUICKCART_LABEL_PERCENT_AMOUNT"
+               description="ROKQUICKCART_DESC_PERCENT_AMOUNT" size="10" validate="number"/>
+		
+        
+        
+
+		<!--
+        <field type="break" label="Google Checkout Options"/>
+        <field name="googlecheckout_merchant_id" type="text" default=""
+               label="ROKQUICKCART_GOOGLECHECKOUT_MERCHANT_ID"
+               description="ROKQUICKCART_GOOGLECHECKOUT_MERCHANT_ID_DESC" size="30"/>
+        <field name="googlecheckout_currency" type="list" default="USD" label="ROKQUICKCART_GOOGLECHECKOUT_CURRENCY"
+               description="ROKQUICKCART_GOOGLECHECKOUT_CURRENCY_DESC">
+            <option value="GBP">Pound Sterling</option>
+            <option value="USD">U.S. Dollar</option>
+        </field>
+        <field type="break" label="ROKQUICKCART_GOOGLE_CHECKOUT_SHIPPING"/>
+
+        <field type="break" label="Amazon Payments Options"/>
+        <field name="amazonpayments_merchant_signature" type="text" default=""
+               label="ROKQUICKCART_AMAZONPAYMENTS_MERCHANT_SIGNATURE"
+               description="ROKQUICKCART_AMAZONPAYMENTS_MERCHANT_SIGNATURE_DESC" size="30"/>
+        <field name="amazonpayments_merchant_id" type="text" default=""
+               label="ROKQUICKCART_AMAZONPAYMENTS_MERCHANT_ID"
+               description="ROKQUICKCART_AMAZONPAYMENTS_MERCHANT_ID_DESC" size="30"/>
+        <field name="amazonpayments_aws_access_key_id" type="text" default=""
+               label="ROKQUICKCART_AMAZONPAYMENTS_AWS_ACCESS_KEY_ID"
+               description="ROKQUICKCART_AMAZONPAYMENTS_AWS_ACCESS_KEY_ID_DESC" size="30"/>
+
+        <field type="break" label="Custom SendForm Options"/>
+        <field name="sendform_url" type="text" default=""
+               label="ROKQUICKCART_SENDFORM_URL"
+                   description="ROKQUICKCART_SENDFORM_URL_DESC" size="30"/>
+		-->
+    </fieldset>
+</config>
