@@ -218,7 +218,7 @@ div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
 					{			  
 						echo "<li>";
 			?>
-							<a href="index.php/<?php echo $item->route; ?>"><?php echo $item->title; ?></a>						
+							<a href="<?php echo $item->route; ?>"><?php echo $item->title; ?></a>						
 			<?php				 
 						echo "</li>";
 					}
