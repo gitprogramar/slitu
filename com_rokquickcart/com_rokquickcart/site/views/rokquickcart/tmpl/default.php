@@ -7,11 +7,15 @@
  */
  
 require_once (JPATH_ROOT.'/linq/YaLinqo/Linq.php');
-require_once ( JPATH_ROOT .'/async/utils.php');	
+require_once ( JPATH_ROOT .'/api/utils.php');	
 $utils = new Utils();
+$customer = $_SESSION["customer"];
 ?>
 
 <style>
+div.cart_cartstatus a:hover {
+	cursor: pointer;
+}
 div.cart_yourcart_items {
 	font-size: .8em !important;
 }
@@ -22,13 +26,10 @@ div.simpleCart_shelfItem {
 	font-size: .9em;
 }
 .mercadoEnviosLogo {
-    width: 20%;
+    width: 33%;
     height: 100%;
     margin-bottom: 0px;
     vertical-align: middle;
-}
-div.item-image {
-	width:20%;
 }
 div.item-name {
 	width:37%;
@@ -43,21 +44,21 @@ div.item-price {
 	width:10%;
 }
 div.item-total {
-	width:10%;
+	width:12%;
 }
 div.cart_badges {
 	visibility: hidden;
 }
 div.headerRow {
-    background: var(--background-2);
-	border-bottom: 1px solid var(--background-3);
+    background: transparent;
+	border-bottom: 1px solid var(--bgfooter);
     padding: 1%;
 }
 div.cart_yourcart {
-	border: 1px solid var(--background-3);
+	border: 1px solid var(--bgfooter);
 }
 div.even {
-	background: var(--background-2);
+	background: rgba(0,0,0,.1);
 }
 .simpleCart_input {
 	width: 50%;
@@ -70,15 +71,30 @@ div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
     justify-content: space-around;
     align-items: center;
 }
-/*Small*/@media screen and (max-width:600px){
+div.medios {
+	margin-bottom: 3%;
+}
+/*Large*/
+@media screen and (min-width:1000px) {
+   div.headerRow div.item-image {
+		width: 7%;
+	}
+}
+/*Small*/
+@media screen and (max-width:600px){
 	div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
 		text-align: center;
 	}
 	div.item-name {
 		width:20%;
 	}
-	div.item-image img {
-		width:100%;		
+	div.cart_product_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;		
+	}
+	div.item-image {
+		width: 15%;
 	}
 }
 /*/components/com_rokquickcart/css/rokquickcart.css*/
@@ -182,7 +198,7 @@ div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
 						<?php if($this->use_rokbox):?></a><?php endif; ?>						
 						<span class="item_price"><span class="cart_currency_symbol"><?php if (JComponentHelper::getParams('com_rokquickcart')->get('display_item_symbol') == 1) { echo $this->currency_symbol; }?></span><span class="cart_price"><?php echo $item->price;?></span></span>						
 					</div>					
-					<div class="column-pad cart_product_r <?php if(!empty($_GET["filter"])): echo "cart_product_r_filter"; endif;?>">
+					<div class="column-center a-start column-pad cart_product_r <?php if(!empty($_GET["filter"])): echo "cart_product_r_filter"; endif;?>">
 						<p class="product_Description">
 							<?php echo $item->description;?>
 						</p>						
@@ -197,7 +213,9 @@ div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
 							<?php endif;?>
 							<a onclick="program.scroll('#rokquickcart');" class="item_add btn button btn-primary"><?php echo JText::_('ROKQUICKCART_ADD_TO_CART');?><span></span></a>
 							<p></p>
-							<a style="color: #121C29; font-weight: bolder; font-size: .9em; font-style: oblique;" href="<?php echo "index.php/contacto?m=Hola quisiera consultar por " . $actual_link . "?filter=" . $item->id; ?>">Consulte sobre el producto<a/>
+							<a class="whatsappCart" style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="" link="Hola%20<?=$customer->customernameParsed ?>%20quisiera%20consultar%20por%20el%20producto:%20<?php echo $actual_link . "?filter=" . $item->id; ?>">Consulte sobre el producto por Whatsapp<a/>
+							<p></p>
+							<a style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="<?php echo "index.php/contacto?m=Hola ".$customer->customername." quisiera consultar por " . $actual_link . "?filter=" . $item->id; ?>">Consulte sobre el producto por Correo<a/>
 						</div>
 					</div>
 				</div>
@@ -322,6 +340,20 @@ $(document).ready(function() {
 		program.notify("El pago se encuentra pendiente", "Por favor siga comprando en el sitio", "warning");
 	}
 	$(".cart_badges").remove();
+	
+	
+	// handle whatsapp link
+	if(window.innerWidth >= 745) {
+		$.each($(".whatsappCart"), function(i, item){
+			item.href =  'https://api.whatsapp.com/send?phone=<?=$customer->celParsed ?>&text=' + $(item).attr("link").replace("=", " ");
+			item.target = "_blank";
+		});		
+	}
+	else {	
+		$.each($(".whatsappCart"), function(i, item){
+			item.href =  'https://wa.me/+<?=$customer->celParsed ?>?text=' + $(item).attr("link");
+		});
+	};
 	
 	// handle item id
 	var currentItemId = 0;
