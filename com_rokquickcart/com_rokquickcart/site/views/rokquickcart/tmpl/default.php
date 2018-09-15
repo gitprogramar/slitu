@@ -168,29 +168,28 @@ div.medios {
 		//var_dump($stock);
 		//var_dump($this->items);
 		//var_dump($result->toArrayDeep());
-		$actual_link = "http://" . $_SERVER[HTTP_HOST] . strtok($_SERVER["REQUEST_URI"],'?');
 		
 		// JSON-LD
 		$json_ld = "";
 		if(empty($_GET["filter"])) {
 			// item list
-			$json_ld = "\"@context\": \"http://schema.org\",\"@type\": \"ItemList\",\"url\": \"" . $actual_link . "\",\"numberOfItems\": \"" . $result->count() . "\",\"itemListElement\": [";
+			$json_ld = "\"@context\": \"https://schema.org\",\"@type\": \"ItemList\",\"url\": \"" . JURI::current() . "\",\"numberOfItems\": \"" . $result->count() . "\",\"itemListElement\": [";
 		}
 		
 		$index = 0;
 		foreach ($result as $item): 
 			if(empty($_GET["filter"])) {
 				// item list
-				$json_ld .= '{"@type": "ListItem","position":"'.($index+1).'","item":{"@type":"Product","name": "' . $item->name . '","url": "' . $actual_link . "?filter=" . $item->id . '","image": "' . JURI::base() . $item->fullImage . '","description": ' . strip_tags(json_encode($item->description)) . ',"category": "' . JFactory::getApplication()->getMenu()->getActive()->title . '","offers": {"@type": "Offer","price": "' . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . '","priceCurrency": "ARS","seller": {"@type": "Organization","name": "' . $siteName . '"}}}},';
+				$json_ld .= '{"@type": "ListItem","position":"'.($index+1).'","item":{"@type":"Product","name": "' . $item->name . '","url": "' . JURI::current() . "?filter=" . $item->id . '","image": "' . JURI::base() . $item->fullImage . '","description": ' . strip_tags(json_encode($item->description)) . ',"category": "' . JFactory::getApplication()->getMenu()->getActive()->title . '","offers": {"@type": "Offer","price": "' . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . '","priceCurrency": "ARS","seller": {"@type": "Organization","name": "' . $siteName . '"}}}},';
 			}
 			else {
 				// single item
-				$json_ld = "\"@context\": \"http://schema.org/\",\"@type\": \"Product\",\"name\": \"" . $item->name . "\",\"image\": \"" . JURI::base() . $item->fullImage . "\",\"description\": " . strip_tags(json_encode($item->description)) . ",\"mpn\": \"" . $item->id . "\",\"category\": \"" . JFactory::getApplication()->getMenu()->getActive()->title . "\",\"url\": \"" . $actual_link . "?filter=" . $item->id . "\",\"offers\": {\"@type\": \"Offer\",\"priceCurrency\": \"ARS\",\"price\": \"" . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . "\",   \"seller\": {\"@type\": \"Organization\",\"name\": \"" . $siteName . "\"}}";
+				$json_ld = "\"@context\": \"https://schema.org/\",\"@type\": \"Product\",\"name\": \"" . $item->name . "\",\"image\": \"" . JURI::base() . $item->fullImage . "\",\"description\": " . strip_tags(json_encode($item->description)) . ",\"mpn\": \"" . $item->id . "\",\"category\": \"" . JFactory::getApplication()->getMenu()->getActive()->title . "\",\"url\": \"" . JURI::current() . "?filter=" . $item->id . "\",\"offers\": {\"@type\": \"Offer\",\"priceCurrency\": \"ARS\",\"price\": \"" . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . "\",   \"seller\": {\"@type\": \"Organization\",\"name\": \"" . $siteName . "\"}}";
 			}
 			?>
 			<div class="simpleCart_shelfItem <?php if(!empty($_GET["filter"])): echo "simpleCart_shelfItem_filter"; endif;?>">
 				<div class="cart_product_content">
-					<h2 class="item_name"><a href="<?php echo $actual_link . "?filter=" . $item->id; ?>"><?php echo $item->name;?></a></h2>
+					<h2 class="item_name"><a href="<?php echo JURI::current() . "?filter=" . $item->id; ?>"><?php echo $item->name;?></a></h2>
 					<div class="cart_product_l <?php if(!empty($_GET["filter"])): echo "cart_product_l_filter"; endif;?>">
 						<?php if($this->use_rokbox):?>
 						<a data-rokbox href="<?php echo $item->fullImage;?>"><?php endif; ?>
@@ -213,9 +212,9 @@ div.medios {
 							<?php endif;?>
 							<a onclick="program.scroll('#rokquickcart');" class="item_add btn button btn-primary"><?php echo JText::_('ROKQUICKCART_ADD_TO_CART');?><span></span></a>
 							<p></p>
-							<a class="whatsappCart" style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="" link="Hola%20<?=$customer->customernameParsed ?>%20quisiera%20consultar%20por%20el%20producto:%20<?php echo $actual_link . "?filter=" . $item->id; ?>">Consulte sobre el producto por Whatsapp<a/>
+							<a class="whatsappCart" style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="" link="Hola <?=$customer->customername ?> quisiera consultar por el producto: <?php echo JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre el producto por Whatsapp<a/>
 							<p></p>
-							<a style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="<?php echo "index.php/contacto?m=Hola ".$customer->customername." quisiera consultar por " . $actual_link . "?filter=" . $item->id; ?>">Consulte sobre el producto por Correo<a/>
+							<a style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="<?php echo "index.php/contacto?m=Hola ".$customer->customername." quisiera consultar por " . JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre el producto por Correo<a/>
 						</div>
 					</div>
 				</div>
@@ -345,13 +344,13 @@ $(document).ready(function() {
 	// handle whatsapp link
 	if(window.innerWidth >= 745) {
 		$.each($(".whatsappCart"), function(i, item){
-			item.href =  'https://api.whatsapp.com/send?phone=<?=$customer->celParsed ?>&text=' + $(item).attr("link").replace("=", " ");
+			item.href =  'https://api.whatsapp.com/send?phone=<?=$customer->celParsed ?>&text=' + encodeURIComponent($(item).attr("link"));
 			item.target = "_blank";
 		});		
 	}
 	else {	
 		$.each($(".whatsappCart"), function(i, item){
-			item.href =  'https://wa.me/+<?=$customer->celParsed ?>?text=' + $(item).attr("link");
+			item.href =  'https://wa.me/+<?=$customer->celParsed ?>?text=' + encodeURIComponent($(item).attr("link"));
 		});
 	};
 	
@@ -415,7 +414,7 @@ $(document).ready(function() {
 		// format title and image for a generic buy
 		if(simpleCart.quantity() > 1) {
 			items[0].title = "Carro de compras (" + title + ")";
-			items[0].picture_url = "http://" + window.location.host + "/images/logo/logo.png";
+			items[0].picture_url = "//" + window.location.host + "/images/logo/logo.png";
 		}
 
 		//back_url				
