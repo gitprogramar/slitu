@@ -13,90 +13,7 @@ $customer = $_SESSION["customer"];
 ?>
 
 <style>
-div.cart_cartstatus a:hover {
-	cursor: pointer;
-}
-div.cart_yourcart_items {
-	font-size: .8em !important;
-}
-h3.cart-title {
-	margin: 2% 0% 3% 0%;
-}
-div.simpleCart_shelfItem {
-	font-size: .9em;
-}
-.mercadoEnviosLogo {
-    width: 33%;
-    height: 100%;
-    margin-bottom: 0px;
-    vertical-align: middle;
-}
-div.item-name {
-	width:37%;
-}
-div.item-quantity {
-	width:8%;
-}
-div.item-remove {
-	width:5%;
-}
-div.item-price {
-	width:10%;
-}
-div.item-total {
-	width:12%;
-}
-div.cart_badges {
-	visibility: hidden;
-}
-div.headerRow {
-    background: transparent;
-	border-bottom: 1px solid var(--bgfooter);
-    padding: 1%;
-}
-div.cart_yourcart {
-	border: 1px solid var(--bgfooter);
-}
-div.even {
-	background: rgba(0,0,0,.1);
-}
-.simpleCart_input {
-	width: 50%;
-	font-family: inherit;
-    font-size: 1em;
-    padding: 7px 7px 7px 12px;
-}
-div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
-	display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-div.medios {
-	margin-bottom: 3%;
-}
-/*Large*/
-@media screen and (min-width:1000px) {
-   div.headerRow div.item-image {
-		width: 7%;
-	}
-}
-/*Small*/
-@media screen and (max-width:600px){
-	div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow {
-		text-align: center;
-	}
-	div.item-name {
-		width:20%;
-	}
-	div.cart_product_content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;		
-	}
-	div.item-image {
-		width: 15%;
-	}
-}
+div.cart_cartstatus a:hover{cursor: pointer;}div.cart_yourcart_items{font-size: .8em !important;}h3.cart-title{margin: 2% 0% 3% 0%;}div.simpleCart_shelfItem{font-size: .9em;}.mercadoEnviosLogo{width: 33%; height: 100%; margin-bottom: 0px; vertical-align: middle;}div.item-name{width:37%;}div.item-quantity{width:8%;}div.item-remove{width:5%;}div.item-price{width:10%;}div.item-total{width:12%;}div.cart_badges{visibility: hidden;}div.headerRow{background: transparent;border-bottom: 1px solid var(--bgfooter); padding: 1%;}div.cart_yourcart{border: 1px solid var(--bgfooter);}div.even{background: rgba(0,0,0,.1);}.simpleCart_input{width: 50%;font-family: inherit; font-size: 1em; padding: 7px 7px 7px 12px;}div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow{display: flex; justify-content: space-around; align-items: center;}div.medios{margin-bottom: 3%;}/*Large*/@media screen and (min-width:1000px){div.headerRow div.item-image{width: 7%;}}/*Small*/@media screen and (max-width:600px){div.simpleCart_items div.headerRow, div.simpleCart_items div.itemRow{text-align: center;}div.item-name{width:20%;}div.cart_product_content{display: flex;flex-direction: column;align-items: center;}div.item-image{width: 15%;}}
 /*/components/com_rokquickcart/css/rokquickcart.css*/
 /** * @version $Id: rokquickcart.css 19276 2014-02-28 03:47:35Z djamil $ * @author RocketTheme, LLC http://www.rockettheme.com * @copyright Copyright (C) 2007 - 2016 RocketTheme, LLC * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only */.cart_products{margin: 0 -10px;}.cart_products:before, .cart_products:after,.cart_product_content:before, .cart_product_content:after{display: table; content: ''; line-height: 0;}.cart_products:after,.cart_product_content:after{clear: both;}.simpleCart_shelfItem .cart_product_l{float: left; text-align: center;    margin-right: 20px;}.simpleCart_shelfItem .cart_product_r{padding-left: 20px;}.simpleCart_shelfItem{float: left;}.simpleCart_shelfItem h2, #main .simpleCart_shelfItem h2{margin: -20px -20px 20px; padding: 20px; border-bottom: 1px solid #ddd;}/* columns */.cart_columns_1 .simpleCart_shelfItem{width: 100%;}.cart_columns_2 .simpleCart_shelfItem{width: 50%;}.cart_columns_3 .simpleCart_shelfItem{width: 33.3334%;}.cart_columns_4 .simpleCart_shelfItem{width: 25%;}@media only screen and (min-width: 768px) and (max-width: 979px){.cart_columns_3 .simpleCart_shelfItem{width: 50%;}.cart_columns_4 .simpleCart_shelfItem{width: 50%;}}@media only screen and (max-width: 767px){.cart_columns_2 .simpleCart_shelfItem{width: 100%;}.cart_columns_3 .simpleCart_shelfItem{width: 100%;}.cart_columns_4 .simpleCart_shelfItem{width: 100%;}}@media only screen and (max-width: 605px){.simpleCart_items th.item-image, .simpleCart_items td.item-image, .simpleCart_items th.item-remove, .simpleCart_items td.item-remove, .simpleCart_items th.item-price, .simpleCart_items td.item-price{display: none;}.simpleCart_items th.item-image, .simpleCart_items td.item-name{padding-left: 10px;}}.cart_cartstatus{float: right;}.cart_cartstatus .simpleCart_quantity{font-weight: bold;}.cart_product_content{margin: 10px; padding: 20px; background: #f5f5f5; border-radius: 8px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px #ddd, inset 0 0 0 2px #fff; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}.simpleCart_shelfItem img{border-radius: 3px;}.simpleCart_shelfItem .item_price{margin-top: 20px; display: block;}.simpleCart_shelfItem .item_price .cart_price .cart_item-price_digits{font-size: 2.2em;}.simpleCart_shelfItem .item_price .cart_currency_symbol{vertical-align: top;}.cart_item-field{color: #999; margin: 10px 0;}.cart_product_add{margin: 20px 0 0;}.cart_product_content input, .cart_product_content select{box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; width: 100%; margin: 5px 0 0; padding: 0;}.cart_item-field span, .cart_product_content input, .cart_product_content select{font-size: 90%;}.cart_yourcart table{border: 1px solid #ddd; width: 100%;}.cart_yourcart table td{padding: 5px 0;}.cart_yourcart table td, .cart_yourcart table td input{text-align: center;}.cart_yourcart table td img{max-height: 50px; max-width: 50px;}.cart_yourcart table input{width: 20px; margin: 0;}.cart_yourcart table th{padding: 10px 30px; background: #f4f4f4; border-bottom: 1px solid #ddd;}.cart_yourcart table .itemRow.even, #main .cart_yourcart table .itemRow.even{background-color: #fafafa;}#main .cart_yourcart table tr, #main .cart_yourcart table td{border: 0; background: transparent;}.cart_yourcart table .item-name{text-align: left; width: 50%;}.cart_yourcart .cart_totals, .cart_yourcart .cart_buttons{padding: 10px 15px; border: 1px solid #ddd; border-top: 0; text-align: right;}.cart_yourcart table td, .cart_yourcart .cart_totals{border-bottom: 0;}.cart_yourcart .cart_totals .cart_summary{margin: 5px 0;}.cart_yourcart .cart_totals .cart_summary_total{margin: 10px -15px -10px; padding: 10px 15px; background: #fbfbfb;}.cart_yourcart .cart_totals span{min-width: 60px; display: inline-block;}.cart_yourcart .cart_totals span.cart_checkout_label{font-weight: bold;}.cart_yourcart .cart_badges{margin-top: 5px;display:none;}.cart_yourcart .cart_badge{display: inline-block; font-size: 0.9em; background: #efefef; padding: 0px 4px; margin: 2px 0; border-radius: 3px; color: #aaa; text-shadow: 0 1px #fff; border: 1px solid #ddd; font-weight: normal;}
 </style>
@@ -104,11 +21,7 @@ div.medios {
 <div class="cart cart_quickcart cart_columns_<?php echo $this->cols; ?>" data-rqc-columns="<?php echo $this->cols; ?>">
 	<?php if ($this->checkout_mode == 'sandbox'):?><div class="alert alert-warning"><?php echo JText::_('ROKQUICKCART_WARN_SANDBOX_MODE')?></div><?php endif;?>
 
-	<?php
-		// site data
-		$config = JFactory::getConfig();
-		$siteName = $config->get('sitename');
-		$siteMail = $config->get('mailfrom');
+	<?php		
 	
 		if(!empty($_GET["collection_status"])) {
 			$status = $_GET["collection_status"];
@@ -117,14 +30,9 @@ div.medios {
 	  <?php } 
 			elseif($status == "approved" && isset($_SESSION["refreshPage"]) && $_SESSION["refreshPage"] === false) { 					
 					// format email
-					$text = "\r\n \r\n Compraron a través de MercadoPago! \r\n Por favor revisa los detalles de la compra en tu cuenta: https://www.mercadopago.com.ar/summary \r\n \r\n" . $siteName . "\r\n" . JURI::base();
+					$html = "<h2>Compraron a través de MercadoPago!</h2> <br> <p>Por favor revisa los detalles de la compra en tu cuenta: https://www.mercadopago.com.ar/summary </p><br><br> <p>" . $customer->customername . "</p><br><span>" . JURI::base() . '</span>';
 					// email SELLER
-					$to=$siteMail;
-					$subject="Compraron productos en tu sitio: " . $siteName;
-					$txt=$text;
-					$headers="From: " . $siteMail; // . "\r\n" . "Bcc: reynicolas2001@yahoo.com.ar"; 
-					//send 
-					mail($to,$subject,$txt,$headers);
+					$utils->sendMail($html, "Compraron productos en tu sitio: " . $customer->customername);					
 			}
 		}
 		$_SESSION["refreshPage"] = true;
@@ -180,11 +88,11 @@ div.medios {
 		foreach ($result as $item): 
 			if(empty($_GET["filter"])) {
 				// item list
-				$json_ld .= '{"@type": "ListItem","position":"'.($index+1).'","item":{"@type":"Product","name": "' . $item->name . '","url": "' . JURI::current() . "?filter=" . $item->id . '","image": "' . JURI::base() . $item->fullImage . '","description": ' . strip_tags(json_encode($item->description)) . ',"category": "' . JFactory::getApplication()->getMenu()->getActive()->title . '","offers": {"@type": "Offer","price": "' . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . '","priceCurrency": "ARS","seller": {"@type": "Organization","name": "' . $siteName . '"}}}},';
+				$json_ld .= '{"@type": "ListItem","position":"'.($index+1).'","item":{"@type":"Product","name": "' . $item->name . '","url": "' . JURI::current() . "?filter=" . $item->id . '","image": "' . JURI::base() . $item->fullImage . '","description": ' . strip_tags(json_encode($item->description)) . ',"category": "' . JFactory::getApplication()->getMenu()->getActive()->title . '","offers": {"@type": "Offer","price": "' . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . '","priceCurrency": "ARS","seller": {"@type": "Organization","name": "' . $customer->customername . '"}}}},';
 			}
 			else {
 				// single item
-				$json_ld = "\"@context\": \"https://schema.org/\",\"@type\": \"Product\",\"name\": \"" . $item->name . "\",\"image\": \"" . JURI::base() . $item->fullImage . "\",\"description\": " . strip_tags(json_encode($item->description)) . ",\"mpn\": \"" . $item->id . "\",\"category\": \"" . JFactory::getApplication()->getMenu()->getActive()->title . "\",\"url\": \"" . JURI::current() . "?filter=" . $item->id . "\",\"offers\": {\"@type\": \"Offer\",\"priceCurrency\": \"ARS\",\"price\": \"" . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . "\",   \"seller\": {\"@type\": \"Organization\",\"name\": \"" . $siteName . "\"}}";
+				$json_ld = "\"@context\": \"https://schema.org/\",\"@type\": \"Product\",\"name\": \"" . $item->name . "\",\"image\": \"" . JURI::base() . $item->fullImage . "\",\"description\": " . strip_tags(json_encode($item->description)) . ",\"mpn\": \"" . $item->id . "\",\"category\": \"" . JFactory::getApplication()->getMenu()->getActive()->title . "\",\"url\": \"" . JURI::current() . "?filter=" . $item->id . "\",\"offers\": {\"@type\": \"Offer\",\"priceCurrency\": \"ARS\",\"price\": \"" . $utils->between(">", "</", $item->price) .  $utils->between_last(">", "</", $item->price)  . "\",   \"seller\": {\"@type\": \"Organization\",\"name\": \"" . $customer->customername . "\"}}";
 			}
 			?>
 			<div class="simpleCart_shelfItem <?php if(!empty($_GET["filter"])): echo "simpleCart_shelfItem_filter"; endif;?>">
@@ -195,13 +103,18 @@ div.medios {
 						<a data-rokbox href="<?php echo $item->fullImage;?>"><?php endif; ?>
 						<img src="<?php echo $item->shelfImage;?>" alt="<?php echo $item->name;?>" title="<?php echo $item->name ;?>" class="item_image"/>
 						<?php if($this->use_rokbox):?></a><?php endif; ?>						
-						<span class="item_price"><span class="cart_currency_symbol"><?php if (JComponentHelper::getParams('com_rokquickcart')->get('display_item_symbol') == 1) { echo $this->currency_symbol; }?></span><span class="cart_price"><?php echo $item->price;?></span></span>						
+						<span class="item_price"><span class="cart_currency_symbol"><?php if (JComponentHelper::getParams('com_rokquickcart')->get('display_item_symbol') == 1) { echo JComponentHelper::getParams('com_rokquickcart')->get('page_title'); }?></span><span class="cart_price"><?php echo $item->price;?></span></span>						
 					</div>					
 					<div class="column-center a-start column-pad cart_product_r <?php if(!empty($_GET["filter"])): echo "cart_product_r_filter"; endif;?>">
 						<p class="product_Description">
 							<?php echo $item->description;?>
 						</p>						
+						
+						<a class="whatsapp" style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="" data-value="Hola <?=$customer->customername ?> quisiera consultar por el ítem: <?php echo $item->name . ' ' . JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre este ítem por Whatsapp<span style="margin-left: 7px;"><i class="fab fa-whatsapp"></i></i></span><a/>						
+						<a style="color: var(--black); text-decoration: underline; font-size: .85em; font-style: oblique;" href="<?php echo "/contacto?m=Hola ".$customer->customername." quisiera consultar por el ítem: " .$item->name . ' ' . JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre este ítem por Correo<span style="margin-left: 7px;"><i class="fas fa-envelope"></i><span><a/>
 						<?php if($this->shipping && trim($item->shipping) != "" && $item->shipping != "0" && preg_match("/^((([0-9])+x){2}[0-9]+,[0-9]+)$/", $item->shipping) == 1):?>
+							<p></p>
+							<p></p>
 							<p class="mercadoEnviosText">Disponible con <img class="mercadoEnviosLogo" src="/images/mercadoenvios.png"></p>
 						<?php endif;?>
 						<input type="hidden" value="1" class="item_Quantity" />						
@@ -210,11 +123,7 @@ div.medios {
 							<?php if($this->shipping):?>
 								<input class="item_shipping" value="<?php echo $item->shipping;?>" type="hidden">
 							<?php endif;?>
-							<a onclick="program.scroll('#rokquickcart');" class="item_add btn button btn-primary"><?php echo JText::_('ROKQUICKCART_ADD_TO_CART');?><span></span></a>
-							<p></p>
-							<a class="whatsappCart" style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="" link="Hola <?=$customer->customername ?> quisiera consultar por el producto: <?php echo JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre el producto por Whatsapp<a/>
-							<p></p>
-							<a style="color: var(--black); text-decoration: underline; font-size: .9em; font-style: oblique;" href="<?php echo "index.php/contacto?m=Hola ".$customer->customername." quisiera consultar por " . JURI::current() . "?filter=" . $item->id; ?>">Consulte sobre el producto por Correo<a/>
+							<a onclick="program.scroll('#rokquickcart');" class="item_add btn button btn-primary"><?php echo JText::_('ROKQUICKCART_ADD_TO_CART');?><span></span></a>							
 						</div>
 					</div>
 				</div>
@@ -338,21 +247,7 @@ $(document).ready(function() {
 		simpleCart.empty(); 
 		program.notify("El pago se encuentra pendiente", "Por favor siga comprando en el sitio", "warning");
 	}
-	$(".cart_badges").remove();
-	
-	
-	// handle whatsapp link
-	if(window.innerWidth >= 745) {
-		$.each($(".whatsappCart"), function(i, item){
-			item.href =  'https://api.whatsapp.com/send?phone=<?=$customer->celParsed ?>&text=' + encodeURIComponent($(item).attr("link"));
-			item.target = "_blank";
-		});		
-	}
-	else {	
-		$.each($(".whatsappCart"), function(i, item){
-			item.href =  'https://wa.me/+<?=$customer->celParsed ?>?text=' + encodeURIComponent($(item).attr("link"));
-		});
-	};
+	$(".cart_badges").remove();	
 	
 	// handle item id
 	var currentItemId = 0;
@@ -408,7 +303,7 @@ $(document).ready(function() {
 			}
 			// get picture
 			picture = $("#cartItem_" + item.get("id")).find("img").attr("src");
-			items.push({ id: item.get("id"), title: item.get("name") + " x" + item.get("quantity") + " unid.", picture_url: picture, quantity: item.get("quantity"), currency_id: "ARS", unit_price: item.get("price") });
+			items.push({ id: item.get("id"), title: item.get("name") + " x" + item.get("quantity") + " unid.", picture_url: picture, quantity: item.get("quantity"), currency_id: "<?=JComponentHelper::getParams('com_rokquickcart')->get('page_title')?>", unit_price: item.get("price") });
 		});
 		
 		// format title and image for a generic buy
@@ -501,7 +396,7 @@ $(document).ready(function() {
 		
 		var items = [];	
 		simpleCart.each(function(item, x) {		
-			items.push({ id: item.get("id"), quantity: item.get("quantity"), currency_id: "ARS", unit_price: item.get("price") });
+			items.push({ id: item.get("id"), quantity: item.get("quantity"), currency_id: "<?=JComponentHelper::getParams('com_rokquickcart')->get('page_title')?>", unit_price: item.get("price") });
 		});
 		
 		program.notify("Procesando pago", "Aguarde un momento...", "warning");
@@ -560,7 +455,7 @@ function processCheckout(paymentType) {
 		simpleCart.each(function(item, x) {
 			// build email text
 			emailTxt +=  item.get("name") + " x" + item.get("quantity") + " unid. = $" + (parseFloat(item.get("price")) * parseFloat(item.get("quantity"))) + "\r\n";
-			items.push({ id: item.get("id"), title: item.get("name") + " x" + item.get("quantity") + " unid.", quantity: item.get("quantity"), currency_id: "ARS", unit_price: item.get("price") });
+			items.push({ id: item.get("id"), title: item.get("name") + " x" + item.get("quantity") + " unid.", quantity: item.get("quantity"), currency_id: "<?=JComponentHelper::getParams('com_rokquickcart')->get('page_title')?>", unit_price: item.get("price") });
 		});
 						
 		program.notify("Procesando pago", "Aguarde un momento...", "warning");
@@ -575,25 +470,20 @@ function processCheckout(paymentType) {
 					}
 					return;
 				}					
-				if(data == "ok") {
-					program.notify("Muchas gracias por su compra", "Correo enviado a su casilla con el detalle de su compra", "success");
-					simpleCart.empty();
-				}
-				else if(data == "login") {
+				
+				if(data == "login") {
 					program.notify("Iniciar Sesión", "Por favor inicie sesión o registre un usuario para comprar", "fail");					
+				}
+				else if(data.toLowerCase().indexOf('no valid') == -1) {
+					//program.notify("Muchas gracias por su compra", "Correo enviado a su casilla con el detalle de su compra", "success");
+					simpleCart.empty();					
+					window.location.href = '/contacto?m='+encodeURIComponent(data).replace(/%5Cr%5Cn/g, '%0D%0A');
 				}
 				else {
 					program.notify("Compra cancelada", "Por favor intente de nuevo", "fail");
 				}
 				// hide loading
 				program.modalHide("loading");
-				
-				/*
-				var loginBtn = $("[href=#login-modal]");
-				if(loginBtn != undefined) {
-					loginBtn.click();
-				}
-				*/
 			},
 			error: function (data, textStatus, jqXHR) {
 				if(data.responseText != undefined) {
@@ -642,6 +532,9 @@ function parseShipment(size) {
 }
 
 function validateFormatSize(size) {
+	if(size == undefined || size == '') {
+		return false;
+	}
 	size = size.replace(/ /g,''); // remove all white spaces
 	patt = new RegExp("^((([0-9])+x){2}[0-9]+,[0-9]+)$"); // match 0x0x0,0
 	if(!patt.test(size)) {

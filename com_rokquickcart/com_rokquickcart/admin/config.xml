@@ -3,8 +3,13 @@
     <fieldset name="basic" addrulepath="/administrator/components/com_rokquickcart/models/rules" addfieldpath="/administrator/components/com_rokquickcart/fields">
         
 		<field type="break" label="Opciones generales"/>
-        <field name="page_title" type="text" default="Our Products" label="ROKQUICKCART_LABEL_CART_PAGE_TITLE"
-               description="ROKQUICKCART_DESC_CART_PAGE_TITLE" size="30" />
+        <field name="page_title" type="text" default="ARS" label="ROKQUICKCART_LABEL_CART_PAGE_TITLE"
+               description="ROKQUICKCART_DESC_CART_PAGE_TITLE" size="3" />
+		<field name="display_item_symbol" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_DEFAULT_DISPLAYITEMSYMBOL"
+               description="ROKQUICKCART_DESC_DEFAULT_DISPLAYITEMSYMBOL">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
         <field name="page_columns" type="integer" default="2" label="ROKQUICKCART_LABEL_PAGE_COLUMNS"
                description="ROKQUICKCART_DESC_PAGE_COLUMNS" first="1" last="4" step="1" required="true"/>
         <field name="shelf_image_width" type="text" default="100" label="ROKQUICKCART_LABEL_SHELF_IMAGE_WIDTH"
@@ -24,12 +29,7 @@
                description="ROKQUICKCART_DESC_DEFAULT_SAMEHEIGHT">
             <option value="0">JNO</option>
             <option value="1">JYES</option>
-        </field>		
-        <field name="display_item_symbol" type="radio" class="btn-group" default="1" label="ROKQUICKCART_LABEL_DEFAULT_DISPLAYITEMSYMBOL"
-               description="ROKQUICKCART_DESC_DEFAULT_DISPLAYITEMSYMBOL">
-            <option value="0">JNO</option>
-            <option value="1">JYES</option>
-        </field>
+        </field>		        
 		<field name="checkout_mode" type="radio" class="btn-group" default="production" label="ROKQUICKCART_LABEL_CHECKOUT_MODE"
                description="ROKQUICKCART_DESC_CHECKOUT_MODE">
             <option value="sandbox">Prueba</option>

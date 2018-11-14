@@ -1788,10 +1788,12 @@
 
 								// check to see if the class matches the item_[fieldname] pattern
 								if (($item.attr("class") &&
+									($item.attr("class").baseVal == undefined) && 
 									$item.attr("class").match(/item_.+/) &&
 									!$item.attr('class').match(/item_add/)) ||
 
 									($item.parent().attr('class') &&
+									($item.parent().attr("class").baseVal == undefined) &&
 									$item.parent().attr("class").match(/item_.+/) &&
 									!$item.parent().attr('class').match(/item_add/))) {
 

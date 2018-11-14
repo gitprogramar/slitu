@@ -174,6 +174,26 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			return;
 		}		
 		
+		$buyDetail = 'Detalle de la compra';
+		foreach (json_decode($items) as $item):			
+			$buyDetail .= '\r\n'.$item->title.' = '. ($item->quantity*$item->unit_price) .' '.$item->currency_id;			
+		endforeach;
+		
+		if($payment == "local") {
+			$buyDetail .= '\r\n \r\n'.'Quisiera que me envíen la información para pagar en el local. Gracias';
+		}
+		elseif($payment == "transfer") {
+			$buyDetail .= '\r\n \r\n'.'Quisiera que me envíen el número de cuenta para pagar por transferecia bancaria. Gracias';
+		}
+		else {
+			echo "No valid data";
+			return;
+		}
+		
+		echo $buyDetail;
+		return;
+		
+		/*
 		// check login
 		$user = JFactory::getUser();
 		$inputCookie  = JFactory::getApplication()->input->cookie;
@@ -182,19 +202,9 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			echo "login";
 			return;
 		}
-
-		// format email
-		if($payment == "local") {
-			$text = $text . "\r\n \r\n Usuario: " . $user->username . "\r\n" . "Forma de pago: En el local" .  "\r\n \r\n Nos pondremos en contacto para coordinar los detalles de tu compra.\r\n \r\n Muchas gracias por elegirnos. \r\n " . $siteName . "\r\n" . JURI::base();
-		}
-		elseif($payment == "transfer") {
-			$text = $text . "\r\n \r\n Usuario: " . $user->username . "\r\n" . "Forma de pago: Transferencia Bancaria" .  "\r\n \r\n Nos pondremos en contacto para coordinar los detalles de tu compra.\r\n \r\n Muchas gracias por elegirnos. \r\n " . $siteName . "\r\n" . JURI::base();
-		}
-		else {
-			echo "No valid data";
-			return;
-		}
+		*/
 		
+		/*		
 		// email BUYER
 		$to=$user->email;
 		$subject="Compra de Items - " . $siteName;
@@ -213,6 +223,7 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 		mail($to,$subject,$txt,$headers);
 		
 		echo("ok");
+		*/
 	}
 	
 	// validates the items have correct id and price
@@ -220,6 +231,11 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 		// current items from DB
 		$model = new RokQuickCartModelRokQuickCart();
 		$stock = $model->getItems(); 				
+		
+		// currency
+		$option = jfactory::getapplication()->input->get('option');
+		$com_params = jcomponenthelper::getparams($option);
+		$currency = $com_params->get('page_title');
 		
 		// perform check
 		$result = false;
@@ -229,7 +245,7 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			foreach ($stock as $stockItem):
 				if($item->id == $stockItem->id && 
 					$item->unit_price == $stockItem->price &&
-					$item->currency_id == "ARS" && $item->quantity > 0
+					$item->currency_id == $currency && $item->quantity > 0
 					)					
 				{
 					$result = true;
