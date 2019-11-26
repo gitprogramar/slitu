@@ -28,29 +28,30 @@ popupInstagram.init = function() {
 	option.addEventListener('change', function() {
 		popupInstagram.checkboxSelection(this);
 	});
-	popupInstagram.checkboxSelection(option);
+	popupInstagram.checkboxSelection(option);	
 }
-popupInstagram.checkboxSelection = function(element) {
+popupInstagram.checkboxSelection = function(element) {	
 	document.querySelectorAll('#slider1 input[type="checkbox"]').forEach(function(item){
-		popupInstagram.itemStatus(item, false, false);
+		popupInstagram.actionStatus(item, false, false);
 	});
 	document.getElementById('instagram-tag').classList.add('n-display');
 	document.getElementById('instagram-comment-value').classList.add('n-display');
 	document.querySelectorAll('#slider1 input[type="checkbox"]').forEach(function(item){
 		if(item.id == 'instagram-unfollow' && element.value != 'instagram-nonfollower' && element.value != 'instagram-follower')
-			popupInstagram.itemStatus(item, false, true);
+			popupInstagram.actionStatus(item, false, true);
 		else if(item.id == 'instagram-follow' && (element.value == 'instagram-nonfollower' || element.value == 'instagram-follower'))
-			popupInstagram.itemStatus(item, false, true);
+			popupInstagram.actionStatus(item, false, true);
 		else 
-			popupInstagram.itemStatus(item, true, false);
+			popupInstagram.actionStatus(item, true, false);
 	});
 		
 	if(element.value == 'instagram-explore')
 		document.getElementById('instagram-tag').classList.remove('n-display');
 	document.getElementById('instagram-comment-value').classList.remove('n-display');
+	popupInstagram.timeSetup();
 };
 
-popupInstagram.itemStatus = function(item, checked, disabled) {
+popupInstagram.actionStatus = function(item, checked, disabled) {
 	item.checked = checked;
 	if(disabled) {
 		item.setAttribute('disabled', true);
@@ -62,11 +63,36 @@ popupInstagram.itemStatus = function(item, checked, disabled) {
 	}
 };
 
-document.getElementById('instagram-comment').addEventListener('click', function() {
-	if(this.checked)
-		document.getElementById('instagram-comment-value').classList.remove('n-display');
-	else
-		document.getElementById('instagram-comment-value').classList.add('n-display');
+document.querySelector('#instagram-time').addEventListener('change', function() {
+	popupInstagram.timeSetup();
+	
+});
+
+popupInstagram.timeSetup = function() {
+	var txtTime = document.querySelector('#instagram-time');
+	var time = parseFloat(txtTime.value.trim());
+	var actionCounter = 0;
+	if(isNaN(time)) {
+		txtTime.value = '6';	
+		time = 6;
+	}	
+	document.querySelectorAll('#slider1 input[type="checkbox"]').forEach(function(item){
+		if(item.checked) actionCounter++;
+	});				
+	document.querySelector('#instagram-limit').value = (actionCounter == 0 ? 0 : (time*6)/actionCounter); 
+};
+
+document.querySelectorAll('#slider1 input[type="checkbox"]').forEach(function(item){
+	item.addEventListener('click', function() {
+		if(this.id == 'instagram-comment') {
+			if(this.checked)
+				document.getElementById('instagram-comment-value').classList.remove('n-display');
+			else
+				document.getElementById('instagram-comment-value').classList.add('n-display');
+		}
+	
+		popupInstagram.timeSetup();	
+	});
 });
 
 document.getElementById('instagram-alert').onclick = function() {
@@ -77,10 +103,14 @@ document.getElementById('instagram-btn').onclick = function() {
 	actions  = [];
 	actions.push('instagram');
 	actions.push(document.getElementById('instagram-process-select').value.replace('instagram-',''));
+	var actionCounter = 0;
 	document.querySelectorAll('#slider1 input[type="checkbox"]').forEach(function(item){
-		if(item.checked)
+		if(item.checked) {
+			actionCounter++;
 			actions.push(item.id.replace('instagram-',''));
+		}
 	});
+	if(actionCounter == 0) return;
 	sessionStorage.setItem('instagram-settings', JSON.stringify({
 		tag: document.getElementById('instagram-tag').value,
 		comment: document.getElementById('instagram-comment-value').value,

@@ -120,7 +120,7 @@ program.robot = function() {
 	modalBody += '<div id="working-modal-unfollow" class="n-display"><h3><strong>'+chrome.i18n.getMessage("unfollowers_remove")+' <span id="unfollow-counter">0</span>' + ':</strong></h3></div></div>';
 	modalBody += '<div id="robot-stop" style="font-size: .8em;"><span>'+chrome.i18n.getMessage("robot_stop")+ /*<i id="working-modal-stop" class="far fa-stop-circle" onclick="document.location.reload()"></i>*/ '</span></div>';
 	modalBody += '<div id="robot-upgrade"><p>'+chrome.i18n.getMessage("version_upgrade")+'</p>';
-	modalBody += '<a href="'+chrome.i18n.getMessage("version_upgrade_url")+'?m='+chrome.i18n.getMessage("version_upgrade_message");
+	modalBody += '<a href="'+chrome.i18n.getMessage("contact_url")+'?m='+chrome.i18n.getMessage("version_upgrade_message");
 	modalBody += '" target="_blank">'+chrome.i18n.getMessage("version_upgrade_request")+'</a> </div>';
 	program.modalShow('working-modal', modalTitle, modalBody, 10);
 }

@@ -1,24 +1,4 @@
-window.onload = function() { 		
-	/*
-	var json ={
-		action: "generateToken",
-		date: "2019-02-10"
-	};
-	program.post("/api/product/post.php", json, function(response) {
-		console.log(response.value);
-	});
-
-	var json ={
-			action: "generateToken",
-			date: "2018-10-27"
-		};
-		program.post("/api/product/post.php", json, function(response) {
-			console.log(response.value);
-		});
-
-	93D074628-3190E3648-91D0A5B14
-	*/
-
+window.onload = function() { 			
 	program.get("https://nubsant.com/api/product/get.php?token="+localStorage.getItem("nubsant-token"), function(response) {
 		if(response.value) {
 			document.getElementById('version-type').innerHTML = chrome.i18n.getMessage("version_type_pro");

@@ -226,7 +226,7 @@ nbInstagram.API.graphql = async function self(value) {
 	.then(function(response) {
 		if(!response.ok) {
 			console.log('nbInstagram.API.graphql fetch ' + response);
-			alert('(nbInstagram.API.graphql)' + chrome.i18n.getMessage("blocked_recommend"));
+			/*alert('(nbInstagram.API.graphql)' + chrome.i18n.getMessage("blocked_recommend"));*/
 			return;
 		}
 		return response.json();
@@ -282,7 +282,7 @@ nbInstagram.API.action = async function self(action, data) {
 			if(!nbInstagram.blocked.includes(action))
 				nbInstagram.blocked.push(action);
 			if(nbInstagram.blocked.length == data.settings.actions.length)
-				alert(chrome.i18n.getMessage("blocked_recommend"));
+				console.log(chrome.i18n.getMessage("blocked_recommend"));
 			return;
 		}
 		program.robotInfo(action, info);

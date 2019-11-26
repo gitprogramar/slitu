@@ -3,7 +3,7 @@
 		"message" : "You are using the <span>PRO</span> version!"
 	},
 	"version_upgrade": {
-		"message": "You are using the <span>FREE</span> version limited to 2 accounts per action. Increase your potential with the <span>PRO</span> version"
+		"message": "You are using the <span>FREE</span> version limited to 2 runs. Release all the power with <span>PRO</span> version"
 	},
 	"contact_url": {
 		"message": "https://nubsant.com/about-us/contact"
@@ -27,19 +27,19 @@
 		"message": "Please contact with Nubsant to obtain a new code."
 	},
 	"help": {
-		"message": "Press for more info"
+		"message": "More info"
 	},
 	"error_title": {
 		"message": "There was an error!"
 	},
 	"error_desc": {
-		"message": "<p> Do the following: </ p> <ul> <li> Refresh the page and try again</ li> <li> Update the application (Extension -> Details -> Update)</ li> <li> If you receive the message 'Action blocked', close your session and wait 24 hours, lower the quantity of accounts and trying again. </li> </ ul>"
+		"message": "<p> Do the following: </ p> <ul> <li> Refresh the page and try again</ li> <li> Update the application (Extension -> Details -> Update)</ li> <li> If you receive the message 'Action blocked', close your session, wait 48 hours and then increase time and lower the quantity. </li> </ ul>"
 	},	
 	"report_title": {
 		"message": "Something is not working?"
 	},
 	"report_desc": {
-		"message": "Report here*"
+		"message": "Report bug*"
 	},
 	"report_message": {
 		"message": "Hello, I have the following problem with the application (please describe in detail all the steps to reproduce the error)"
@@ -84,19 +84,19 @@
 		"message": "New comments"
 	},
 	"comment_desc": {
-		"message": "Commentary (random leave empty)"
+		"message": "Comment (random: leave empty)"
 	},
 	"comment_1": {
-		"message": "Nice post! Check out my profile and follow me too! &#9732; &#9787; &#9728; &#9762; &#9834;"
+		"message": "Nice post! Follow me too! &#9732; &#9787; &#9728; &#9762; &#9834;"
 	},	
 	"comment_2": {
-		"message": "I like your photos! Please put Like to mine as well &#9996; &#9996; &#9996; &#9996; &#9996;"
+		"message": "I like your photos! Put Like to my photos as well &#9996; &#9996; &#9996; &#9996; &#9996;"
 	},
 	"comment_3": {
 		"message": "&#9754; &#9754; &#9754; &#9754; &#9754; &#161;&#161;This is really cool!! &#9876; &#9876; &#9876; &#9874; &#9874;"
 	},
 	"comment_4": {
-		"message": "I give 5 &#9733; &#9733; &#9733; &#9733; &#9733; to your profile! Check out mine!"
+		"message": "I give you 5 &#9733; &#9733; &#9733; &#9733; &#9733;! Check out my profile!"
 	},
 	"comment_5": {
 		"message": "&#8466;ike it! &#9787;"
@@ -116,17 +116,32 @@
 	"comment_10": {
 		"message": "&#x2618; &#x2618; &#x2618; &#x2618;"
 	},
+	"comment_11": {
+		"message": "Awesome &#9732; &#9732; &#9732; &#9732;"
+	},
+	"comment_12": {
+		"message": "Cool! &#9733; &#9733; &#9733; &#9733;"
+	},
+	"comment_13": {
+		"message": "We are the champions &#9996; &#9996; &#9996; &#9996;"
+	},
+	"comment_14": {
+		"message": "Love it! &#10084; &#10084; &#10084; &#10084;"
+	},
+	"comment_15": {
+		"message": "Best profile ever! &#10084; &#10084; &#10084;"
+	},
 	"instagram_desc": {
-		"message": "Select an option, action, quantity and time"
+		"message": "Select an option and the actions"
 	},
 	"instagram_tag": {
-		"message": "Keyword (random leave empty)"
+		"message": "Hashtag (random: leave empty)"
 	},
 	"instagram_limit": {
-		"message": "Quantity (of accounts)"
+		"message": "Quantity per action"
 	},
 	"instagram_time": {
-		"message": "Time (in hours)"
+		"message": "Time in hours"
 	},
 	"instagram_btn": {
 		"message": "Start"
@@ -135,7 +150,7 @@
 		"message": "How to run the Robot?"
 	},
 	"intagram_info_desc": {
-		"message": "<p>Enter a keyword and quantity, or leave empty. Keyword example: cars, marketing.</p><p>Select an action</p><p>Press 'START'. You can continue working without closing the tab or suspend/sleep the device.</p> <p>We recommend running <strong>1 action per day</strong></p> <p>Start with <strong>20 accounts</strong> and then increase the number little by little. </p>"
+		"message": "<p>Select the option and the actions</p><p>Enter a hashtag or leave empty. Example: cars</p><p>Time and quantity are autofilled to prevent get banned account</p><p>Press 'START'. You can continue working without closing the tab</p> "
 	},	
 	"profile": {
 		"message": "Profile"
@@ -144,7 +159,7 @@
 		"message": "new accounts"
 	},
 	"unfollowers_remove": {
-		"message": "Removing accounts that do not follow you"
+		"message": "Removing accounts not following you"
 	},
 	"robot_working": {
 		"message": "I'm working! Wait..."
@@ -168,7 +183,7 @@
 		"message": "Action Blocked"
 	},
 	"blocked_recommend": {
-		"message": "Possible 'Action blocked' Try the following: close your session, wait 24 hours, then lower the quantity of accounts and try again."
+		"message": "Sorry! An error occurred. If the error persist close your session, wait 48 hours, then increase time and lower the quantity"
 	},	
 	"process": {
 		"message": "Process"

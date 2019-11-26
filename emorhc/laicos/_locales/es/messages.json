@@ -3,7 +3,7 @@
 		"message" : "¡Estás usando la versión <span>PRO</span>!"
 	},
 	"version_upgrade": {
-		"message": "Estás usando la versión <span>FREE</span> limitada a 2 cuentas por acción. Aumentá tu potencial con la versión <span>PRO</span>"
+		"message": "Estás usando la versión <span>FREE</span> limitada a 2 corridas. Liberá todo el poder con la versión <span>PRO</span>"
 	},
 	"contact_url": {
 		"message": "https://nubsant.com/es/nosotros/contacto"
@@ -27,19 +27,19 @@
 		"message": "Por favor contacta con Nubsant para obtener un nuevo código."
 	},	
 	"help": {
-		"message": "Presionar para más info"
+		"message": "Más info"
 	},
 	"error_title": {
 		"message": "¡Hubo un error!"
 	},
 	"error_desc": {
-		"message": "<p>Verifica lo siguiente:</p> <ul><li>Actualiza la página y vuleve a intentarlo</li><li>Actualiza la applicación (Extensiones -> Detalles -> Actualizar)</li><li>Si recibes el mensaje 'Acción bloqueada' cerrá tu sesión, esperá 24 horas, bajá la cantidad de cuentas e intenta nuevamente.</li> </ul>"
+		"message": "<p>Verifica lo siguiente:</p> <ul><li>Actualiza la página y vuleve a intentarlo</li><li>Actualiza la applicación (Extensiones -> Detalles -> Actualizar)</li><li>Si recibes el mensaje 'Acción bloqueada' cierre su sesión, espere 48 horas y luego aumente el tiempo y reduzca la cantidad.</li> </ul>"
 	},	
 	"report_title": {
 		"message": "¿Algo no funciona?"
 	},
 	"report_desc": {
-		"message": "Reportarlo aquí*"
+		"message": "Reportar error*"
 	},
 	"report_message": {
 		"message": "Hola tengo el siguiente problema con la aplicación (por favor describe con en detalle todos los pasos para reproducir el error)"
@@ -84,7 +84,7 @@
 		"message": "Nuevos comentarios"
 	},
 	"comment_desc": {
-		"message": "Comentario (aleatorio dejar vacio)"
+		"message": "Comentario (aleatorio: dejar vacio)"
 	},
 	"comment_1": {
 		"message": "¡Muy buena publicación! ¡Mira mi perfil y seguime también! &#9732; &#9787; &#9728; &#9762; &#9834;"
@@ -116,17 +116,32 @@
 	"comment_10": {
 		"message": "&#x2618; &#x2618; &#x2618; &#x2618;"
 	},	
+	"comment_11": {
+		"message": "Increible &#9732; &#9732; &#9732; &#9732;"
+	},
+	"comment_12": {
+		"message": "Copado! &#9733; &#9733; &#9733; &#9733;"
+	},
+	"comment_13": {
+		"message": "Somos los campeones &#9996; &#9996; &#9996; &#9996;"
+	},
+	"comment_14": {
+		"message": "Me encanta &#10084; &#10084; &#10084; &#10084;"
+	},
+	"comment_15": {
+		"message": "El mejor perfil de todos! &#10084; &#10084; &#10084;"
+	},
 	"instagram_desc": {
-		"message": "Seleccionar una opción, acción, cantidad y tiempo"
+		"message": "Seleccionar una opción y las accines"
 	},
 	"instagram_tag": {
-		"message": "Palabre clave (aleatorio dejar vacio)"
+		"message": "Hashtag (aleatorio: dejar vacio)"
 	},
 	"instagram_limit": {
-		"message": "Cantidad (de cuentas)"
+		"message": "Cantidad por acción"
 	},
 	"instagram_time": {
-		"message": "Tiempo (en horas)"
+		"message": "Tiempo en horas"
 	},
 	"instagram_btn": {
 		"message": "Comenzar"
@@ -135,7 +150,7 @@
 		"message": "¿Como ejecutar el robot?"
 	},
 	"intagram_info_desc": {
-		"message": "<p>Ingrese una palabra clave y cantidad, o dejar vacio. Ejemplo de palabra clave: autos, marketing.</p><p>Seleccionar acción</p><p>Presionar 'COMENZAR'. Podés seguir trabajando sin cerrar la pestaña ni suspender/apagar el dispositivo.</p> <p>Recomendamos ejecutar <strong>1 acción por día</strong> </p> <p>Comienza con <strong>20 cuentas</strong> y luego aumenta el número poco a poco.</p>"
+		"message": "<p>Seleccione una opción y las accines</p><p>Ingrese un hashtag o dejar vacio. Ejemplo: autos</p><p>El tiempo y cantidad se completan automaticamente para evitar bloqueos de cuenta</p><p>Presionar 'COMENZAR'. Podés seguir trabajando sin cerrar la pestaña</p> "
 	},
 	"profile": {
 		"message": "Perfil"
@@ -168,7 +183,7 @@
 		"message": "Acción bloqueada"
 	},
 	"blocked_recommend": {
-		"message": "Posible 'Acción bloqueada' intenta lo siguiente: cerrá tu sesión, esperá 24 horas, luego bajá la cantidad de cuentas e intenta nuevamente."
+		"message": "¡Lo siento! Ocurrió un error. Si el error persiste, cierre su sesión, espere 48 horas, luego aumente el tiempo y reduzca la cantidad"
 	},	
 	"process": {
 		"message": "Proceso"
