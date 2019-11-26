@@ -1,0 +1,29 @@
+var recursiveAction = async function self(index, data) {
+	var item = data[index];
+	var name = ''+index;	
+	if(name.length == 1) name = '0'+index;
+	await action(item, name).then(async function() {
+		await sleep();
+		index++;
+		return self(index, data);
+	});
+};
+
+var action = async function self(image, name) {
+	var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+	a.href = image.src;
+    a.download = name;
+    a.click();    
+	return;
+};
+
+var sleep = function () {
+    return new Promise(resolve => setTimeout(resolve, 5000));
+};
+
+var className = '_18vxA'; // <- CHANGE to parent div that contains all the images on the chat
+var index = 0;
+var data = document.querySelectorAll('#main img[class="'+className+'"]');
+recursiveAction(index, data);
