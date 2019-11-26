@@ -1,0 +1,198 @@
+{
+	"version_type_pro" :{
+		"message" : "You are using the <span>PRO</span> version!"
+	},
+	"version_upgrade": {
+		"message": "You are using the <span>FREE</span> version limited to 2 accounts per action. Increase your potential with the <span>PRO</span> version"
+	},
+	"contact_url": {
+		"message": "https://nubsant.com/about-us/contact"
+	},
+	"version_upgrade_message": {
+		"message": "Hello, I would like to obtain the PRO version of the Nubsant Social Robot product!"
+	},
+	"version_upgrade_request": {
+		"message": "Request now"
+	},
+	"code_btn": {
+		"message": "Validate"
+	},
+	"code_title": {
+		"message": "Enter your code here"
+	},
+	"invalid_code": {
+		"message": "Invalid code"
+	},
+	"invalid_code_desc": {
+		"message": "Please contact with Nubsant to obtain a new code."
+	},
+	"help": {
+		"message": "Press for more info"
+	},
+	"error_title": {
+		"message": "There was an error!"
+	},
+	"error_desc": {
+		"message": "<p> Do the following: </ p> <ul> <li> Refresh the page and try again</ li> <li> Update the application (Extension -> Details -> Update)</ li> <li> If you receive the message 'Action blocked', close your session and wait 24 hours, lower the quantity of accounts and trying again. </li> </ ul>"
+	},	
+	"report_title": {
+		"message": "Something is not working?"
+	},
+	"report_desc": {
+		"message": "Report here*"
+	},
+	"report_message": {
+		"message": "Hello, I have the following problem with the application (please describe in detail all the steps to reproduce the error)"
+	},
+	"report_before": {
+		"message": "*Before reporting an error check "
+	},
+	"report_alert": {
+		"message": "+info"
+	},
+	"terms_text": {
+		"message": "Terms of Use"
+	},
+	"terms_link": {
+		"message": "https://nubsant.com/products/social-networks/social-robot-terms-of-use"
+	},
+	"like": {
+		"message": "Like"
+	},
+	"new_likes": {
+		"message": "New Likes"
+	},
+	"following": {
+		"message": "Following"
+	},
+	"followers": {
+		"message": "Followers"
+	},
+	"followed": {
+		"message": "Followed"
+	},
+	"follow": {
+		"message": "Follow"
+	},
+	"unfollow": {
+		"message": "Unfollow"
+	},	
+	"comment": {
+		"message": "Comment"
+	},
+	"new_comments": {
+		"message": "New comments"
+	},
+	"comment_desc": {
+		"message": "Commentary (random leave empty)"
+	},
+	"comment_1": {
+		"message": "Nice post! Check out my profile and follow me too! &#9732; &#9787; &#9728; &#9762; &#9834;"
+	},	
+	"comment_2": {
+		"message": "I like your photos! Please put Like to mine as well &#9996; &#9996; &#9996; &#9996; &#9996;"
+	},
+	"comment_3": {
+		"message": "&#9754; &#9754; &#9754; &#9754; &#9754; &#161;&#161;This is really cool!! &#9876; &#9876; &#9876; &#9874; &#9874;"
+	},
+	"comment_4": {
+		"message": "I give 5 &#9733; &#9733; &#9733; &#9733; &#9733; to your profile! Check out mine!"
+	},
+	"comment_5": {
+		"message": "&#8466;ike it! &#9787;"
+	},
+	"comment_6": {
+		"message": "&#9787; &#9787; &#9787;"
+	},
+	"comment_7": {
+		"message": "&#8466;ike it! &#10084;"
+	},
+	"comment_8": {
+		"message": "&#8459;i there!"
+	},
+	"comment_9": {
+		"message": "&#8497;ollow by &#8497;ollow?"
+	},
+	"comment_10": {
+		"message": "&#x2618; &#x2618; &#x2618; &#x2618;"
+	},
+	"instagram_desc": {
+		"message": "Select an option, action, quantity and time"
+	},
+	"instagram_tag": {
+		"message": "Keyword (random leave empty)"
+	},
+	"instagram_limit": {
+		"message": "Quantity (of accounts)"
+	},
+	"instagram_time": {
+		"message": "Time (in hours)"
+	},
+	"instagram_btn": {
+		"message": "Start"
+	},
+	"intagram_info_title": {
+		"message": "How to run the Robot?"
+	},
+	"intagram_info_desc": {
+		"message": "<p>Enter a keyword and quantity, or leave empty. Keyword example: cars, marketing.</p><p>Select an action</p><p>Press 'START'. You can continue working without closing the tab or suspend/sleep the device.</p> <p>We recommend running <strong>1 action per day</strong></p> <p>Start with <strong>20 accounts</strong> and then increase the number little by little. </p>"
+	},	
+	"profile": {
+		"message": "Profile"
+	},
+	"new_accounts": {
+		"message": "new accounts"
+	},
+	"unfollowers_remove": {
+		"message": "Removing accounts that do not follow you"
+	},
+	"robot_working": {
+		"message": "I'm working! Wait..."
+	},
+	"robot_stop": {
+		"message": "To stop the process refresh the page"
+	},
+	"robot_finished": {
+		"message": "I've finished my work."
+	},
+	"close": {
+		"message": "Close"
+	},
+	"comming_soon": {
+		"message": "Comming soon"
+	},
+	"actions": {
+		"message": "Actions"
+	},
+	"blocked": {
+		"message": "Action Blocked"
+	},
+	"blocked_recommend": {
+		"message": "Possible 'Action blocked' Try the following: close your session, wait 24 hours, then lower the quantity of accounts and try again."
+	},	
+	"process": {
+		"message": "Process"
+	},
+	"follow_new_and_suggested": {
+		"message": "Follow new/suggested accounts"
+	},
+	"explore": {
+		"message": "Explore posts"
+	},
+	"activity": {
+		"message": "Account activity"
+	},	
+	"suggested": {
+		"message": "Suggested accounts"
+	},
+	"nonfollower": {
+		"message": "Accounts not following you"
+	},
+	
+	"follow_followers_and_likes": {
+		"message": "Follow accounts that follow you and gave you Like"
+	},
+	"unfollow_non_followers": {
+		"message": "Unfollow accounts that do not follow you"
+	}
+}

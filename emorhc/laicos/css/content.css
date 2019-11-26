@@ -1,0 +1,172 @@
+/*Flexbox*/.column-center{display: flex; flex-direction: column; justify-content: center; align-items: center;}.column-vertical{height: inherit;}.column-space-around{display: flex; flex-direction: column; justify-content: space-around; align-items: center;}.column-space-between{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}.row-center{display: flex; justify-content: center; align-items: center;}.row-space-between{display: flex; justify-content: space-between; align-items: center;}.row-space-around{display: flex; justify-content: space-around; align-items: center;}.flex{display: flex;}.j-center{justify-content: center;}.j-start{justify-content: flex-start;}.j-end{justify-content: flex-end;}.j-between{justify-content: space-between;}.j-around{justify-content: space-around;}.a-center{align-items: center;}.a-start{align-items: flex-start;}.d-column{flex-direction: column;}.d-row{flex-direction: row;}.o-1{order: 1;}.w-10{width: 10%;}.w-15{width: 15%;}.w-20{width: 20%;}.w-23{width: 23%;}.w-25{width: 25%;}.w-30{width: 30%;}.w-40{width: 40%;}.w-45{width: 45%;}.w-50{width: 50%;}.w-55{width: 55%;}.w-60{width: 60%;}.w-65{width: 65%;}.w-70{width: 70%;}.w-80{width: 80%;}.w-90{width: 90%;}.w-100{width: 100%;}/*Flexbox end*/
+.n-display{display: none !important;}
+.uppercase {
+	text-transform: uppercase;
+}
+
+.btn {
+    background: #fff;
+    box-shadow: inset 0 -.8em 1em 0 var(--third);
+    color: #fff;
+    font-size: inherit;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: box-shadow .5s ease-out;
+    border: none;
+    line-height: 1em;
+}
+.btn-transparent {
+    border: 2px solid #fff;
+    background-color: transparent;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all .3s ease-out;
+}
+.btn-transparent:hover * {
+    color: #2b2b2b;
+}
+
+.btn-transparent:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #2b2b2b;
+    box-shadow: none;
+}
+
+#working-modal:before {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#working-modal div {
+    z-index: inherit;
+    text-align: center;
+    /*width: 95%;*/
+    margin-bottom: 15px;
+}
+
+#working-modal-desc {
+	width: 50%;
+    z-index: 1 !important;
+	font-size: 26px;
+    margin-top: 15px;
+}
+
+#working-modal-title {
+	width: 70%;
+    line-height: 1em;
+	z-index: 1 !important;
+    flex-direction: row;
+    color: #e4e465;
+    font-size: 42px;
+}
+
+#working-modal-title svg {
+    font-size: 64px;
+    color: #38e4be;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+
+#working-modal-desc svg {
+    color: #8a2be2;
+}
+
+#working-modal-summary {
+    overflow-y: auto;
+    height: 35vh;
+    margin-top: 3%;	
+}
+
+#working-modal-summary h3, #working-modal-summary a {
+	color: white;
+	margin: 7px 0px 7px;
+}
+
+#working-modal-summary h3 {
+	font-size: 1.2em;
+    line-height: 1.2em;
+	font-weight: bold;
+}
+
+#working-modal-summary::-webkit-scrollbar {
+    width: 8px;
+}
+
+#working-modal-summary::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#working-modal-summary::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#working-modal-stop {
+	vertical-align: middle;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+
+#robot-upgrade {
+	line-height: 1em;
+	color: #00ffff;
+	display: none;
+}
+#robot-upgrade > a {
+	color: #7fff00;
+	text-decoration: underline;
+}
+
+.modal {
+    opacity: 0;
+    z-index: -10000;
+    width: 100%;
+    position: absolute;
+    color: #eeeeee;
+    transition: opacity .7s ease-out;
+}
+
+.modal:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-simple {
+    opacity: 0;
+    z-index: -10000;
+    width: 100%;
+    position: absolute;
+    color: #3e3e3e;
+    color: var(--second);
+    transition: opacity .7s ease-out;
+}
+
+.modal-hidden {
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    position: relative;
+}
+
+.modal-close {
+    color: #fff;
+    display: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 100000;
+    font-size: 40px;
+    cursor: pointer;
+}

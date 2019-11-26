@@ -1,0 +1,196 @@
+{
+	"version_type_pro" :{
+		"message" : "¡Estás usando la versión <span>PRO</span>!"
+	},
+	"version_upgrade": {
+		"message": "Estás usando la versión <span>FREE</span> limitada a 2 cuentas por acción. Aumentá tu potencial con la versión <span>PRO</span>"
+	},
+	"contact_url": {
+		"message": "https://nubsant.com/es/nosotros/contacto"
+	},
+	"version_upgrade_message": {
+		"message": "¡Hola quisiera obtener la versión PRO del producto Nubsant Social Robot!"
+	},
+	"version_upgrade_request": {
+		"message": "Solicitar ahora"
+	},	
+	"code_btn": {
+		"message": "Validar"
+	},
+	"code_title": {
+		"message": "Ingresá tu código aquí"
+	},
+	"invalid_code": {
+		"message": "Código inválido"
+	},
+	"invalid_code_desc": {
+		"message": "Por favor contacta con Nubsant para obtener un nuevo código."
+	},	
+	"help": {
+		"message": "Presionar para más info"
+	},
+	"error_title": {
+		"message": "¡Hubo un error!"
+	},
+	"error_desc": {
+		"message": "<p>Verifica lo siguiente:</p> <ul><li>Actualiza la página y vuleve a intentarlo</li><li>Actualiza la applicación (Extensiones -> Detalles -> Actualizar)</li><li>Si recibes el mensaje 'Acción bloqueada' cerrá tu sesión, esperá 24 horas, bajá la cantidad de cuentas e intenta nuevamente.</li> </ul>"
+	},	
+	"report_title": {
+		"message": "¿Algo no funciona?"
+	},
+	"report_desc": {
+		"message": "Reportarlo aquí*"
+	},
+	"report_message": {
+		"message": "Hola tengo el siguiente problema con la aplicación (por favor describe con en detalle todos los pasos para reproducir el error)"
+	},
+	"report_before": {
+		"message": "*Antes de reportar un error verifica "
+	},
+	"report_alert": {
+		"message": "+info"
+	},
+	"terms_text": {
+		"message": "Condiciones de uso"
+	},
+	"terms_link": {
+		"message": "https://nubsant.com/es/productos/redes-sociales/social-robot-condiciones-de-uso"
+	},
+	"like": {
+		"message": "Me gusta"
+	},
+	"new_likes": {
+		"message": "Nuevos 'Me gusta'"
+	},
+	"following": {
+		"message": "Siguiendo"
+	},
+	"followers": {
+		"message": "Seguidores"
+	},
+	"followed": {
+		"message": "Seguidos"
+	},	
+	"follow": {
+		"message": "Seguir"
+	},
+	"unfollow": {
+		"message": "Dejar de seguir"
+	},	
+	"comment": {
+		"message": "Comentar"
+	},
+	"new_comments": {
+		"message": "Nuevos comentarios"
+	},
+	"comment_desc": {
+		"message": "Comentario (aleatorio dejar vacio)"
+	},
+	"comment_1": {
+		"message": "¡Muy buena publicación! ¡Mira mi perfil y seguime también! &#9732; &#9787; &#9728; &#9762; &#9834;"
+	},
+	"comment_2": {
+		"message": "¡Me gustan tus fotos! Dale Like a las mías &#9996; &#9996; &#9996; &#9996; &#9996;"
+	},
+	"comment_3": {
+		"message": "&#9754; &#9754; &#9754; &#9754; &#9754; ¡¡Este post esta genial!! &#9876; &#9876; &#9876; &#9874; &#9874;"
+	},
+	"comment_4": {
+		"message": "Le doy 5 &#9733; &#9733; &#9733; &#9733; &#9733; a tu perfil ¡Revisá el mío!"
+	},
+	"comment_5": {
+		"message": "&#8499;e gusta! &#9787;"
+	},
+	"comment_6": {
+		"message": "&#9787; &#9787; &#9787;"
+	},
+	"comment_7": {
+		"message": "&#8499;e gusta! &#10084;"
+	},
+	"comment_8": {
+		"message": "&#8459;ola!"
+	},
+	"comment_9": {
+		"message": "&#8499;e seguis?"
+	},
+	"comment_10": {
+		"message": "&#x2618; &#x2618; &#x2618; &#x2618;"
+	},	
+	"instagram_desc": {
+		"message": "Seleccionar una opción, acción, cantidad y tiempo"
+	},
+	"instagram_tag": {
+		"message": "Palabre clave (aleatorio dejar vacio)"
+	},
+	"instagram_limit": {
+		"message": "Cantidad (de cuentas)"
+	},
+	"instagram_time": {
+		"message": "Tiempo (en horas)"
+	},
+	"instagram_btn": {
+		"message": "Comenzar"
+	},
+	"intagram_info_title": {
+		"message": "¿Como ejecutar el robot?"
+	},
+	"intagram_info_desc": {
+		"message": "<p>Ingrese una palabra clave y cantidad, o dejar vacio. Ejemplo de palabra clave: autos, marketing.</p><p>Seleccionar acción</p><p>Presionar 'COMENZAR'. Podés seguir trabajando sin cerrar la pestaña ni suspender/apagar el dispositivo.</p> <p>Recomendamos ejecutar <strong>1 acción por día</strong> </p> <p>Comienza con <strong>20 cuentas</strong> y luego aumenta el número poco a poco.</p>"
+	},
+	"profile": {
+		"message": "Perfil"
+	},
+	"new_accounts": {
+		"message": "nuevas cuentas"
+	},
+	"unfollowers_remove": {
+		"message": "Quitando cuentas que no te siguen"
+	},
+	"robot_working": {
+		"message": "¡Estoy trabajando! Espera..."
+	},
+	"robot_stop": {
+		"message": "Para detener el proceso actualiza la página"
+	},
+	"robot_finished": {
+		"message": "Terminé mi trabajo."
+	},
+	"close": {
+		"message": "Cerrar"
+	},
+	"comming_soon": {
+		"message": "Disponible en breve"
+	},
+	"actions": {
+		"message": "Acciones"
+	},
+	"blocked": {
+		"message": "Acción bloqueada"
+	},
+	"blocked_recommend": {
+		"message": "Posible 'Acción bloqueada' intenta lo siguiente: cerrá tu sesión, esperá 24 horas, luego bajá la cantidad de cuentas e intenta nuevamente."
+	},	
+	"process": {
+		"message": "Proceso"
+	},	
+	"explore": {
+		"message": "Explorar contenido"
+	},
+	"activity": {
+		"message": "Actividad de la cuenta"
+	},
+	"suggested": {
+		"message": "Cuentas sugeridas"
+	},
+	"nonfollower": {
+		"message": "Cuentas que NO te siguen"
+	},	
+	
+	
+	"follow_followers_and_likes": {
+		"message": "Seguir cuentas que te siguen y dieron 'Me gusta'"
+	},
+	"unfollow_non_followers": {
+		"message": "Dejar de seguir cuentas que no te siguen"
+	}
+}
