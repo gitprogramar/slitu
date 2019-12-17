@@ -72,6 +72,9 @@ color: var(--black);
 #report-alert,#terms-text {
 	cursor: pointer;
 }
+#instagram-time-label > span, #instagram-limit-label > span{
+	font-style: oblique;
+}
 #notify-message {
     font-size: .8em;
 }

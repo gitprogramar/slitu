@@ -108,7 +108,7 @@
 		"message": "&#8499;e gusta! &#10084;"
 	},
 	"comment_8": {
-		"message": "&#8459;ola!"
+		"message": "ooooooo&#8459; genial!"
 	},
 	"comment_9": {
 		"message": "&#8499;e seguis?"
@@ -132,17 +132,23 @@
 		"message": "El mejor perfil de todos! &#10084; &#10084; &#10084;"
 	},
 	"instagram_desc": {
-		"message": "Seleccionar una opción y las accines"
+		"message": "Seleccionar una opción"
 	},
 	"instagram_tag": {
 		"message": "Hashtag (aleatorio: dejar vacio)"
 	},
+	"instagram_limit_label": {
+		"message": "Corridas por defecto <span>(cantidad)</span>"
+	},
 	"instagram_limit": {
-		"message": "Cantidad por acción"
+		"message": "Ingresar tu propia cantidad"
+	},
+	"instagram_time_label": {
+		"message": "Tiempo por defecto <span>(horas)</span>"
 	},
 	"instagram_time": {
-		"message": "Tiempo en horas"
-	},
+		"message": "Ingresar tu propio tiempo"
+	},	
 	"instagram_btn": {
 		"message": "Comenzar"
 	},
@@ -150,7 +156,7 @@
 		"message": "¿Como ejecutar el robot?"
 	},
 	"intagram_info_desc": {
-		"message": "<p>Seleccione una opción y las accines</p><p>Ingrese un hashtag o dejar vacio. Ejemplo: autos</p><p>El tiempo y cantidad se completan automaticamente para evitar bloqueos de cuenta</p><p>Presionar 'COMENZAR'. Podés seguir trabajando sin cerrar la pestaña</p> "
+		"message": "<p>Seleccione una opción y las accines</p><p>Ingrese un hashtag o dejar vacio (si aplica). Ejemplo: autos</p><p>El tiempo y cantidad se completan automaticamente para evitar bloqueos de cuenta</p><p>Presionar 'COMENZAR'. Podés seguir trabajando sin cerrar la pestaña</p> "
 	},
 	"profile": {
 		"message": "Perfil"

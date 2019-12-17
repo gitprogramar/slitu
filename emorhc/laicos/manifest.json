@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Nubsant Social Robot",
 	"description": "Nubsant Social boot: like, follow, unfollow.",
-	"version": "2.0",
+	"version": "2.1",
 	 "icons": {
       "16": "images/16.png",
       "32": "images/32.png",

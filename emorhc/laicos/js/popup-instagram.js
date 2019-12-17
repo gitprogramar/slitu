@@ -11,7 +11,9 @@ popupInstagram.init = function() {
 	document.getElementById('instagram-limit').setAttribute('placeholder', chrome.i18n.getMessage("instagram_limit"));	
 	document.getElementById('instagram-time').setAttribute('placeholder', chrome.i18n.getMessage("instagram_time"));		
 	document.getElementById('instagram-actions').innerHTML = chrome.i18n.getMessage("actions");	
-	
+	document.getElementById('instagram-time-label').innerHTML = chrome.i18n.getMessage("instagram_time_label");	
+	document.getElementById('instagram-limit-label').innerHTML = chrome.i18n.getMessage("instagram_limit_label");	
+
 	var option = document.getElementById('instagram-process-select');
 	option.innerHTML += '<option value="instagram-explore">' + chrome.i18n.getMessage("explore") + '</option>';
 	option.innerHTML += '<option value="instagram-activity">' + chrome.i18n.getMessage("activity") + '</option>';

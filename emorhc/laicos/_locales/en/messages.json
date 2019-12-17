@@ -108,7 +108,7 @@
 		"message": "&#8466;ike it! &#10084;"
 	},
 	"comment_8": {
-		"message": "&#8459;i there!"
+		"message": "ooooooo&#8459; sweet!"
 	},
 	"comment_9": {
 		"message": "&#8497;ollow by &#8497;ollow?"
@@ -132,16 +132,22 @@
 		"message": "Best profile ever! &#10084; &#10084; &#10084;"
 	},
 	"instagram_desc": {
-		"message": "Select an option and the actions"
+		"message": "Select an option"
 	},
 	"instagram_tag": {
 		"message": "Hashtag (random: leave empty)"
 	},
+	"instagram_limit_label": {
+		"message": "Default Runs <span>(quantity)</span>"
+	},
 	"instagram_limit": {
-		"message": "Quantity per action"
+		"message": "Enter your custom runs"
+	},
+	"instagram_time_label": {
+		"message": "Default Time <span>(hours)</span>"
 	},
 	"instagram_time": {
-		"message": "Time in hours"
+		"message": "Enter your custom time"
 	},
 	"instagram_btn": {
 		"message": "Start"
@@ -150,7 +156,7 @@
 		"message": "How to run the Robot?"
 	},
 	"intagram_info_desc": {
-		"message": "<p>Select the option and the actions</p><p>Enter a hashtag or leave empty. Example: cars</p><p>Time and quantity are autofilled to prevent get banned account</p><p>Press 'START'. You can continue working without closing the tab</p> "
+		"message": "<p>Select the option and the actions</p><p>Enter a hashtag or leave empty (if apply). Example: cars</p><p>Time and quantity are autofilled to prevent get banned account</p><p>Press 'START'. You can continue working without closing the tab</p> "
 	},	
 	"profile": {
 		"message": "Profile"

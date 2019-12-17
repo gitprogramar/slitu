@@ -81,9 +81,8 @@ nbInstagram.UI.explore.start = function(data) {
 			program.finish("robot_finished", nbInstagram.version);
 			program.endWatch('Total time:');
 			return;
-		}
-		var postIndex = Math.floor(Math.random() * (posts.length-2) + 1);
-		posts[postIndex].click();
+		}		
+		posts[0].click();
 			
 		setTimeout(function() {
 			document.querySelector('#working-modal-unfollow').style.display = 'none';
@@ -95,31 +94,45 @@ nbInstagram.UI.explore.start = function(data) {
 };
 nbInstagram.UI.explore.next = function self(data) {	
 	nbInstagram.API.graphql(location.pathname).then(function(graphql) {
+		if(typeof(graphql) == 'undefined') {
+			console.log('attemping to continue...');
+			nbInstagram.UI.explore.continue(data, self);
+			return;
+		}
+		
 		data.media = {};
 		data.media.id = graphql.shortcode_media.id;		
 		data.media.shortcode = graphql.shortcode_media.shortcode;
 		data.user = graphql.shortcode_media.owner;
 		
+		if(program.robotDuplicate(data.user.username)) {
+			console.log('duplicate: ' + data.user.username);
+			nbInstagram.UI.explore.continue(data, self);
+			return;
+		}
+		
 		nbInstagram.COMMON.recursiveAction(0, data).then(function() {
 			nbInstagram.counter++;
-			var blocked = false;
-			document.querySelectorAll('h3').forEach(function(item) {
-				if(item.innerText == chrome.i18n.getMessage("blocked")) blocked = true;
-			});
-			var nextBtn = document.querySelector('a[class*="coreSpriteRightPaginationArrow"]');	
-			if(blocked || nextBtn == null || nbInstagram.counter >= nbInstagram.limit) {
-				program.finish("robot_finished", nbInstagram.version);
-				program.endWatch('Total time:');		
-				if(blocked) alert(chrome.i18n.getMessage("blocked_recommend"));
-				return;
-			}
-			
-			nextBtn.click();
-			setTimeout(function() {
-				self(data);
-			}, 6000);
+			nbInstagram.UI.explore.continue(data, self);
 		});		
 	});			
+};
+nbInstagram.UI.explore.continue = function(data, callback) {
+	var blocked = false;
+	document.querySelectorAll('h3').forEach(function(item) {
+		if(item.innerText == chrome.i18n.getMessage("blocked")) blocked = true;
+	});
+	var nextBtn = document.querySelector('a[class*="coreSpriteRightPaginationArrow"]');	
+	if(blocked || nextBtn == null || nbInstagram.counter >= nbInstagram.limit) {
+		program.finish("robot_finished", nbInstagram.version);
+		program.endWatch('Total time:');		
+		if(blocked) alert(chrome.i18n.getMessage("blocked_recommend"));
+		return;
+	}
+	nextBtn.click();
+	setTimeout(function() {
+		callback(data);
+	}, 6000);
 };
 /*BKG (background) activity*/
 nbInstagram.BKG.activity = function(data) {
@@ -224,18 +237,14 @@ nbInstagram.BKG.nonfollower = async function(data) {
 nbInstagram.API.graphql = async function self(value) {
 	return fetch(value+'?__a=1') 
 	.then(function(response) {
-		if(!response.ok) {
-			console.log('nbInstagram.API.graphql fetch ' + response);
-			/*alert('(nbInstagram.API.graphql)' + chrome.i18n.getMessage("blocked_recommend"));*/
-			return;
-		}
+		if(!response.ok) throw new Error(nbInstagram.COMMON.error(response));
 		return response.json();
 	})
 	.then(function(json) {		
 		return json.graphql;		
 	})
 	.catch((error) => {
-		console.log('nbInstagram.API.graphql catch ' + error);
+		console.log(error);
 	});
 };
 nbInstagram.API.action = async function self(action, data) {
@@ -246,7 +255,7 @@ nbInstagram.API.action = async function self(action, data) {
 	options.headers = headers;
 	options.method = 'POST';
 	var info = '';
-	
+		
 	if(action == 'like') {
 		api += 'likes/'+data.media.id+'/like/';
 		info = '<a href="/p/'+data.media.shortcode+'" target="_blank">'+data.user.username+'</span>';
@@ -256,7 +265,7 @@ nbInstagram.API.action = async function self(action, data) {
 		api += 'comments/'+data.media.id+'/add/';
 		var comment = data.settings.comment;
 		if(comment == undefined || comment.trim() == '')
-			comment = chrome.i18n.getMessage("comment_" + (Math.floor(Math.random() * (10 - 1)) + 1));
+			comment = chrome.i18n.getMessage("comment_" + (Math.floor(Math.random() * (15 - 1)) + 1));
 		var formData  = new FormData();
 		formData.append('comment_text', '@' + data.user.username + ' ' + program.htmlentities.decode(comment));
 		options.body = formData;
@@ -278,18 +287,20 @@ nbInstagram.API.action = async function self(action, data) {
 	
 	return fetch(api, options) 		 
 	.then(function(response) {
-		if(!response.ok || response.url == 'https://www.instagram.com/' /*&& (response.status == 400 || response.status == 302)*/) {
+		if(response.url == 'https://www.instagram.com/') {
+			/*possible blocked account or specific action*/
 			if(!nbInstagram.blocked.includes(action))
-				nbInstagram.blocked.push(action);
+				nbInstagram.blocked.push(action);			
 			if(nbInstagram.blocked.length == data.settings.actions.length)
-				console.log(chrome.i18n.getMessage("blocked_recommend"));
+				alert(chrome.i18n.getMessage("blocked_recommend"));	
 			return;
 		}
+		if(!response.ok) throw new Error(nbInstagram.COMMON.error(response));
 		program.robotInfo(action, info);
 		return;
 	})
-	.catch((error) => {		
-		console.log('nbInstagram.API.action catch ' + error);
+	.catch((error) => {
+		console.log(error);
 	});
 };
 nbInstagram.API.accounts = async function self(action, data, page) {
@@ -346,6 +357,12 @@ nbInstagram.COMMON.actionsByUsers = async function self(data, users) {
 		}
 		
 		await nbInstagram.API.graphql('/'+user.username+'/').then(async function(graphql) {
+			if(typeof(graphql) == 'undefined') {
+				console.log('attemping to continue...');				
+				await nbInstagram.COMMON.sleep();				
+				return;
+			}
+
 			data.user =	graphql.user;
 			data.media = {};
 			var hasMedia = false;
@@ -374,6 +391,13 @@ nbInstagram.COMMON.recursiveAction = async function self(index, data) {
 nbInstagram.COMMON.sleep = function () {
     return new Promise(resolve => setTimeout(resolve, nbInstagram.time));
 }	
+nbInstagram.COMMON.error = function (response) {
+	var error = '\n';
+	error += 'Status: ' + response.status + '\n';
+	error += 'Text: ' + response.statusText + '\n';
+	error += 'Url: ' + response.url;
+	return error;
+}
 
 /*OLD: User interface behaviour*/
 /*

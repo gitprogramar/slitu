@@ -130,11 +130,18 @@ program.robotInfo = function(key, msg) {
 	module.innerHTML += msg;
 	module.classList.remove('n-display');
 	var counter = document.getElementById(key + '-counter');
-	counter.innerText = isNaN(counter.innerText) ? 1 : (parseInt(counter.innerText) + 1);
-		
-	/*var container = document.getElementById('working-modal-summary');
-	if((container.scrollHeight - container.scrollTop) > container.clientHeight)
-		container.scrollTop = container.clientHeight;*/
+	counter.innerText = isNaN(counter.innerText) ? 1 : (parseInt(counter.innerText) + 1);	
+}
+
+program.robotDuplicate = function(username) {
+	var duplicate = false;
+	document.getElementById('working-modal-summary').childNodes.forEach(function(module) {
+		module.childNodes.forEach(function(item) {
+			if(item.innerText == username)
+				duplicate = true;
+		});
+	});
+	return duplicate;	
 }
 
 program.isWorking = function() {	
