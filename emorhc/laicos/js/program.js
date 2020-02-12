@@ -108,7 +108,7 @@ program.finish = function(msg, version) {
 
 program.robot = function() {
 	window.scroll(0,0);
-	document.querySelector('body').style.overflow = 'hidden';
+	//document.querySelector('body').style.overflow = 'hidden';
 	var modalTitle = '<i class="fas fa-robot"></i> '+chrome.i18n.getMessage("robot_working");
 	/*modalTitle += ' <span id="working-stop" onclick="alert(\'ok\')" class="btn btn-transparent" style="font-size: .3em;margin-left: 2%;">';
 	modalTitle += chrome.i18n.getMessage("robot_stop")+'</span>';*/

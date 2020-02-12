@@ -68,8 +68,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, callback) {
 
 /*UI explore*/
 nbInstagram.UI.explore.start = function(data) {	
-	var searchUrl = '/explore/' + (data.settings.tag.trim() == '' ? '' : 'tags/' + data.settings.tag.replace(/ /g,''));
-	if(location.href.indexOf(searchUrl) == -1) {
+	var searchUrl = '/explore/' + (data.settings.tag.trim() == '' ? '' : 'tags/' + decodeURIComponent(data.settings.tag.replace(/ /g,'')));
+	if(decodeURIComponent(location.href).indexOf(searchUrl) == -1) {
 		location.href = searchUrl;
 		return;
 	}		
@@ -186,7 +186,7 @@ nbInstagram.UI.suggested = function self(data, init) {
 				nbInstagram.COMMON.actionsByUsers(data, users);
 				return;
 			}
-			index++;
+			//index++;
 			self(data, false);
 		}, 6000, users);
 	}
@@ -263,7 +263,7 @@ nbInstagram.API.action = async function self(action, data) {
 	}
 	else if(action == 'comment') {		
 		api += 'comments/'+data.media.id+'/add/';
-		var comment = data.settings.comment;
+		var comment = decodeURIComponent(data.settings.comment);
 		if(comment == undefined || comment.trim() == '')
 			comment = chrome.i18n.getMessage("comment_" + (Math.floor(Math.random() * (15 - 1)) + 1));
 		var formData  = new FormData();

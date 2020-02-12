@@ -114,8 +114,8 @@ document.getElementById('instagram-btn').onclick = function() {
 	});
 	if(actionCounter == 0) return;
 	sessionStorage.setItem('instagram-settings', JSON.stringify({
-		tag: document.getElementById('instagram-tag').value,
-		comment: document.getElementById('instagram-comment-value').value,
+		tag: encodeURIComponent(document.getElementById('instagram-tag').value),
+		comment: encodeURIComponent(document.getElementById('instagram-comment-value').value),
 		limit: document.getElementById('instagram-limit').value,
 		time: document.getElementById('instagram-time').value,
 		actions: actions
