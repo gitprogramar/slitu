@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addrulepath="/administrator/components/com_rokquickcart/models/rules">
+        <field name="id"
+               type="text"
+               label="JGLOBAL_FIELD_ID_LABEL"
+               description="JGLOBAL_FIELD_ID_DESC"
+               size="10"
+               default="0"
+               readonly="true"
+               class="readonly"
+                />
+
+        <field name="name"
+               type="text"
+               label="ROKQUICKCART_NAME"
+               description="ROKQUICKCART_TIP_NAME"
+               class="inputbox"
+               size="100"
+               required="true"
+                />
+
+        <field name="price"
+               type="text"
+               label="ROKQUICKCART_PRICE"
+               description="ROKQUICKCART_TIP_PRICE"
+               class="inputbox"
+               size="10"
+               required="true"
+               validate="number"
+                />
+        <field name="shipping"
+               type="text"
+               label="ROKQUICKCART_SHIPPING_COST"
+               description="ROKQUICKCART_TIP_SHIPPING_COST"
+               class="inputbox"
+               size="100"               
+                />
+        <field name="image"
+               type="media"
+               label="Select an image"
+               description=""
+               directory="rokquickcart"
+               javascript=""
+               exclude=""
+               stripext=""
+                />
+
+        <field id="published"
+               name="published"
+               type="list"
+               label="JSTATUS"
+               description="JFIELD_PUBLISHED_DESC"
+               class="inputbox chzn-color-state"
+               size="1"
+               default="1"
+                >
+            <option value="1">
+                JPUBLISHED
+            </option>
+            <option value="0">
+                JUNPUBLISHED
+            </option>
+            <option value="2">
+                JARCHIVED
+            </option>
+            <option value="-2">
+                JTRASHED
+            </option>
+        </field>
+
+        <field name="ordering"
+            type="order"
+            class="inputbox"
+            label="JFIELD_ORDERING_LABEL"
+            description="JFIELD_ORDERING_DESC"
+            default="0"
+            />
+
+        <field name="description" type="editor"
+               label="ROKQUICKCART_DESCRIPTION"
+               description="ROKQUICKCART_TIP_DESCRIPTION"
+               height="350"
+               class="inputbox"
+               filter="safehtml"
+               buttons="true"
+               hide="readmore,pagebreak,image"
+                />
+    </fieldset>
+    <fields name="params">
+        <fieldset name="custom"
+                  label="ROKQUICKCART_LABEL_CUSTOM_FIELDS"
+                  addpath="/administrator/components/com_rokquickcart/models/fields">
+
+            <field name="custom_fields"
+                    type="customcartparams"
+                    label="ROKQUICKCART_LABEL_CUSTOM_PARAMS"
+                    description="ROKQUICKCART_DESC_CUSTOM_PARAMS" />
+
+            <!-- <field name="has_sizes"
+                   type="hidden"
+                   label="ROKQUICKCART_LABEL_SHOW_SIZES"
+                   description="ROKQUICKCART_DESC_SHOW_SIZES" />
+            <field name="has_colors"
+                   type="hidden"
+                   label="ROKQUICKCART_LABEL_SHOW_COLORS"
+                   description="ROKQUICKCART_DESC_SHOW_COLORS" />
+            <field name="colors"
+                   type="hidden"
+                   label="ROKQUICKCART_LABEL_COLORS"
+                   description="ROKQUICKCART_DESC_COLORS"/>-->
+        </fieldset>
+    </fields>
+</form>

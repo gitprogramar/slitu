@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" group="system" method="upgrade">
+    <name>Installer</name>
+	<author>RocketTheme, LLC</author>
+	<creationDate>March 17, 2016</creationDate>
+	<copyright>(C) 2005 - 2016 RocketTheme, LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@rockettheme.com</authorEmail>
+	<authorUrl>http://www.rockettheme.com</authorUrl>
+	<version>2.1.5</version>
+    <description>Catalog for Joomla! v1.0.0</description>
+    <scriptfile>install.script.php</scriptfile>
+    <files>
+        <filename plugin="rokquickcart_installer">installer.php</filename>
+    </files>
+    <cogs>
+        <cog type="component" client="administrator" access="1" enabled="true" protected="false">
+            com_catalog
+            <name>Catalog Component</name>
+            <description>Catalog Component for Joomla</description>
+        </cog>
+    </cogs>
+</extension>

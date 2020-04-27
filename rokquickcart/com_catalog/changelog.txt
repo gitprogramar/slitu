@@ -1,0 +1,3 @@
+Changes (diffecrences with Cart):
+com_catalog\com_catalog\site\views\rokquickcart\tmpl\default.php
+com_catalog\com_catalog\site\models\rokquickcart.php
