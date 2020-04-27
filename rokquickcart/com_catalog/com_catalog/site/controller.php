@@ -85,7 +85,7 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 		if(!$this->validateItems(json_decode($items))) {
 			echo json_decode($back_urls)->failure . '?collection_status=rejected';
 			return;
-		}		
+		}
 	
 		// get mode: sandbox or production
 		$option = jfactory::getapplication()->input->get('option');
@@ -105,7 +105,7 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 		//var_dump($shipments);
 						
 		$preference_data = array(
-			"items" => $items,
+			"items" => json_decode($items),
 			"back_urls" => json_decode($back_urls),//array("success" => "http://localhost/zuk/index.php/catalogo"),
 			//"auto_return" => "approved",
 			"shipments" => json_decode($shipments),
@@ -134,10 +134,21 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			return;
 		}
 
-		
-
 		// get current rate from http://themoneyconverter.com
-		$page_text = file_get_contents("http://themoneyconverter.com/CurrencyConverter.aspx?tab=0&dccy1=USD&dccy2=ARS");
+		//$page_text = file_get_contents("http://themoneyconverter.com/CurrencyConverter.aspx?tab=0&dccy1=USD&dccy2=ARS");
+		
+		// create curl resource
+		$ch = curl_init();
+		// set url
+		curl_setopt($ch, CURLOPT_URL, "https://themoneyconverter.com/CurrencyConverter?tab=0&dccy1=USD&dccy2=ARS");
+		//return the transfer as a string
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+		// $output contains the output string
+		$page_text = curl_exec($ch);
+		// close curl resource to free up system resources
+		curl_close($ch); 
+		
 		$dom = new DOMDocument;
 		libxml_use_internal_errors(true);
 		$dom->loadHTML($page_text);

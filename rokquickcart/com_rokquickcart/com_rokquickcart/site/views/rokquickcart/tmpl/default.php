@@ -394,6 +394,13 @@ $(document).ready(function() {
 		// show loading
 		program.modalShow("loading");
 		
+		simpleCart({
+		checkout: { 
+				type: "PayPal" , 
+				email: "<?=JComponentHelper::getParams('com_rokquickcart')->get('paypal_email') ?>"
+			}
+		});
+		
 		var items = [];	
 		simpleCart.each(function(item, x) {		
 			items.push({ id: item.get("id"), quantity: item.get("quantity"), currency_id: "<?=JComponentHelper::getParams('com_rokquickcart')->get('page_title')?>", unit_price: item.get("price") });
