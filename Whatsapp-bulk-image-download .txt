@@ -23,7 +23,7 @@ var sleep = function () {
     return new Promise(resolve => setTimeout(resolve, 5000));
 };
 
-var className = '_18vxA'; // <- CHANGE to parent div that contains all the images on the chat
+var className = '_1YbLB'; // <- CHANGE to current img class (all the images on the chat has it)
 var index = 0;
 var data = document.querySelectorAll('#main img[class="'+className+'"]');
 recursiveAction(index, data);

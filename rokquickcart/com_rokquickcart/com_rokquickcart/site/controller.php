@@ -11,9 +11,8 @@
 defined('_JEXEC') or die;
 include_once(JPATH_COMPONENT_ADMINISTRATOR . '/helpers/legacy_class.php');
 jimport('joomla.application.component.controller');
-require_once (JPATH_ROOT.'/mercadopago/mercadopago.php');
 require_once (JPATH_COMPONENT . '/models/rokquickcart.php');
-require_once (JPATH_ROOT.'/linq/YaLinqo/Linq.php');
+require_once (JPATH_ROOT.'/api/utils.php');
 
 /**
  * RokQuickCart Component Controller
@@ -87,30 +86,17 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			return;
 		}
 	
-		// get mode: sandbox or production
-		$option = jfactory::getapplication()->input->get('option');
-		$com_params = jcomponenthelper::getparams($option);
-		$checkout_mode = $com_params->get('checkout_mode');
-			
-		// mercado pago credentials
-		$mp;
-		if($checkout_mode == 'sandbox') {
-			// sandbox credentials
-			$mp = new MP ("6330820886431614", "RkjM1UmTPQWrtyt9i7fgFLPFeWb42SFB");
-		}
-		else {
-			// add production credentials
-			$mp = new MP ($com_params->get('client_id'), $com_params->get('client_secret'));
-		}		
-		//var_dump($shipments);
-						
+		//var_dump($shipments);		
+	
 		$preference_data = array(
 			"items" => json_decode($items),
 			"back_urls" => json_decode($back_urls),//array("success" => "http://localhost/zuk/index.php/catalogo"),
 			//"auto_return" => "approved",
 			"shipments" => json_decode($shipments),
+			"notification_url"=> $_SESSION["customer"]->domain."/api/ipn.php"
 		);
-		$preference = $mp->create_preference($preference_data);		
+		
+		$preference = $utils->mercadopago()->create_preference($preference_data);	
 		
 		$_SESSION["refreshPage"] = false;
 
@@ -185,7 +171,7 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			return;
 		}		
 		
-		$buyDetail = 'Detalle de la compra';
+		/*$buyDetail = 'Detalle de la compra';
 		foreach (json_decode($items) as $item):			
 			$buyDetail .= '\r\n'.$item->title.' = '. ($item->quantity*$item->unit_price) .' '.$item->currency_id;			
 		endforeach;
@@ -203,8 +189,8 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 		
 		echo $buyDetail;
 		return;
+		*/
 		
-		/*
 		// check login
 		$user = JFactory::getUser();
 		$inputCookie  = JFactory::getApplication()->input->cookie;
@@ -213,28 +199,45 @@ class RokQuickCartController extends RokQuickCartLegacyJController
 			echo "login";
 			return;
 		}
-		*/
 		
-		/*		
+		if($payment == "local") {
+			$payment =  "En el local";
+		}
+		elseif($payment == "transfer") {
+			$payment =  "Transferencia Bancaria";
+		}
+		else {
+			echo "No valid data";
+			return;
+		}
+		
 		// email BUYER
-		$to=$user->email;
-		$subject="Compra de Items - " . $siteName;
-		$txt=$text; 
-		$headers="From: " . $siteMail; // . "\r\n" . "Bcc: reynicolas2001@yahoo.com.ar"; 
-		//send 
-		mail($to,$subject,$txt,$headers); 
-		
+		$html = '<h2>Detalle de tu compra</h2>';
+		$html .= '<p><span>Forma de pago: </span> ';
+		$html .= '<strong>'.$payment.'</strong></p>';
+		$html .= '<p><span>Items: </span> ';
+		$html .= '<strong>'.str_replace('Detalle de su compra:','',$text).'</strong></p>';	
+		$html .= '<br><br><p> Nos pondremos en contacto para coordinar los detalles de tu compra.</p>';
+		$html .= '<br><h3>'.$siteName.'</h3>';
+		$html .= '<br>'.JURI::base();
+		$utils->sendMail($html, "¡Muchas gracias por tu compra!", $user->email);
+				
 		// email SELLER
-		$to=$siteMail;
-		//$to="reynicolas2001@yahoo.com.ar";
-		$subject="Compraron productos en tu sitio: " . $siteName;
-		$txt=$text;
-		$headers="From: " . $user->email; // . "\r\n" . "Bcc: reynicolas2001@yahoo.com.ar"; 
-		//send 
-		mail($to,$subject,$txt,$headers);
+		$html = '<h2>Detalles de tu venta:</h2>';
+		$html .= '<p><span>Forma de pago: </span> ';
+		$html .= '<strong>'.$payment.'</strong></p>';
+		$html .= '<p><span>Items: </span> ';
+		$html .= '<strong>'.str_replace('Detalle de su compra:','',$text).'</strong></p>';
+		$html .= '<p><span>Comprador: </span> ';
+		$html .= '<strong>'.$user->username.'</strong></p>';
+		$html .= '<p><span>Correo: </span> ';
+		$html .= '<strong>'.$user->email.'</strong></p>';	
+		$html .= '<br><br><p>Contacta al comprador y coordiná los detalles de tu venta</p>';
+		$html .= '<br><h3>'.$siteName.'</h3>';
+		$html .= '<br>'.JURI::base();
+		$utils->sendMail($html, "¡Compraron en tu sitio!");
 		
 		echo("ok");
-		*/
 	}
 	
 	// validates the items have correct id and price

@@ -30,9 +30,9 @@ div.cart_cartstatus a:hover{cursor: pointer;}div.cart_yourcart_items{font-size: 
 	  <?php } 
 			elseif($status == "approved" && isset($_SESSION["refreshPage"]) && $_SESSION["refreshPage"] === false) { 					
 					// format email
-					$html = "<h2>Compraron a través de MercadoPago!</h2> <br> <p>Por favor revisa los detalles de la compra en tu cuenta: https://www.mercadopago.com.ar/summary </p><br><br> <p>" . $customer->customername . "</p><br><span>" . JURI::base() . '</span>';
+					//$html = "<h2>Compraron a través de MercadoPago!</h2> <br> <p>Por favor revisa los detalles de la compra en tu cuenta: https://www.mercadopago.com.ar/summary </p><br><br> <p>" . $customer->customername . "</p><br><span>" . JURI::base() . '</span>';
 					// email SELLER
-					$utils->sendMail($html, "Compraron productos en tu sitio: " . $customer->customername);					
+					//$utils->sendMail($html, "Compraron productos en tu sitio: " . $customer->customername);					
 			}
 		}
 		$_SESSION["refreshPage"] = true;
@@ -308,8 +308,11 @@ $(document).ready(function() {
 		
 		// format title and image for a generic buy
 		if(simpleCart.quantity() > 1) {
-			items[0].title = "Carro de compras (" + title + ")";
+			items[0].title = "Carro de compras: " + title;
 			items[0].picture_url = "//" + window.location.host + "/images/logo/logo.png";
+		}
+		else {
+			items[0].title = "Carro de compras: " + items[0].title;
 		}
 
 		//back_url				
